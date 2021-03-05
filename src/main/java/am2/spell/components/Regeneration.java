@@ -12,6 +12,7 @@ import am2.particles.ParticleFloatUpward;
 import am2.particles.ParticleOrbitEntity;
 import am2.playerextensions.ExtendedProperties;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
@@ -90,7 +91,8 @@ public class Regeneration implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_BLUE),
-				Items.golden_apple
+				ItemSetup.appleJack,
+				ItemSetup.primitiveBandage
 		};
 	}
 

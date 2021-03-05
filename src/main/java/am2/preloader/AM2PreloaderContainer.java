@@ -13,9 +13,9 @@ import java.util.Arrays;
 import java.util.Map;
 
 
-public class AM2PreloaderContainer extends DummyModContainer implements IFMLLoadingPlugin{
+public abstract class AM2PreloaderContainer extends DummyModContainer implements IFMLLoadingPlugin{
 
-	private final String[] asmTransformers = new String[]{"am2.preloader.AccessTransformers", "am2.preloader.BytecodeTransformers"};
+	private final String[] asmTransformers = new String[]{"am2.preloader.BytecodeTransformers"};
 	private final ModMetadata md = new ModMetadata();
 
 	public static boolean foundThaumcraft = false;
@@ -124,11 +124,12 @@ public class AM2PreloaderContainer extends DummyModContainer implements IFMLLoad
 			}
 		}
 	}
-
+/*
 	@Override
 	public String getAccessTransformerClass(){
 		return null;
 	}
+*/
 
 	public static boolean isOptiFinePresent(){
 		if (!confirmedOptiFine && foundOptiFine){

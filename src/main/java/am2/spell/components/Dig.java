@@ -31,6 +31,8 @@ import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.Random;
 
+//TODO find way to rebalance otherwise disable spell
+
 public class Dig implements ISpellComponent{
 
 	private static final float hardnessManaFactor = 1.28f;

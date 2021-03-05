@@ -3,6 +3,7 @@ package am2.spell.modifiers;
 import am2.api.spell.component.interfaces.ISpellModifier;
 import am2.api.spell.enums.SpellModifiers;
 import am2.items.ItemsCommonProxy;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
@@ -31,8 +32,8 @@ public class Damage implements ISpellModifier{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_ENDER),
-				Items.iron_sword,
-				"P:!0 & !1 & 2 & 3" //harming potion
+				ItemSetup.copperSwordHead,
+				ItemSetup.brandy
 		};
 	}
 

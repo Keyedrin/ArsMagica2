@@ -7,6 +7,7 @@ import am2.api.spell.enums.SpellModifiers;
 import am2.items.ItemsCommonProxy;
 import am2.particles.AMParticle;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.entity.Entity;
@@ -113,7 +114,7 @@ public class Ignition implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_ORANGE),
-				Items.flint_and_steel
+				ItemSetup.flintSteel
 		};
 	}
 

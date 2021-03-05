@@ -8,6 +8,7 @@ import am2.api.spell.enums.SpellModifiers;
 import am2.items.ItemsCommonProxy;
 import am2.spell.SpellHelper;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.boss.EntityDragonPart;
@@ -72,8 +73,8 @@ public class Touch implements ISpellShape{
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_VINTEUMDUST),
 				Items.feather,
-				Items.fish,
-				Items.clay_ball
+				ItemSetup.seashell,
+				ItemSetup.clayBall
 		};
 	}
 

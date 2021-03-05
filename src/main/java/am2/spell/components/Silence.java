@@ -7,6 +7,7 @@ import am2.buffs.BuffEffectSilence;
 import am2.buffs.BuffList;
 import am2.items.ItemsCommonProxy;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.boss.IBossDisplayData;
@@ -22,10 +23,10 @@ public class Silence implements ISpellComponent{
 	@Override
 	public Object[] getRecipeItems(){
 		return new Object[]{
-				Blocks.wool,
+				ItemSetup.silkCloth,
 				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
-				Blocks.jukebox,
-				Blocks.wool
+				ItemSetup.leatherHelmet,
+				ItemSetup.woolCloth
 		};
 	}
 

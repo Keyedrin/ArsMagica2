@@ -15,6 +15,7 @@ import am2.items.ItemsCommonProxy;
 import am2.particles.AMParticle;
 import am2.particles.ParticleOrbitEntity;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.BlockSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
@@ -98,7 +99,7 @@ public class Levitation implements ISpellComponent, IRitualInteraction{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_WHITE),
-				BlocksCommonProxy.tarmaRoot
+				new ItemStack(BlockSetup.flowers2, 1, 8)
 		};
 	}
 
@@ -115,8 +116,7 @@ public class Levitation implements ISpellComponent, IRitualInteraction{
 	@Override
 	public ItemStack[] getReagents(){
 		return new ItemStack[]{
-				new ItemStack(Items.feather),
-				new ItemStack(BlocksCommonProxy.tarmaRoot)
+				new ItemStack(Items.feather)
 		};
 	}
 

@@ -18,6 +18,8 @@ import am2.spell.SpellHelper;
 import am2.spell.SpellUtils;
 import am2.spell.modifiers.Colour;
 import am2.utility.MathUtilities;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.boss.EntityDragonPart;
@@ -149,10 +151,10 @@ public class Beam implements ISpellShape{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				ItemsCommonProxy.standardFocus,
-				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_BLUETOPAZ),
-				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_BLUETOPAZ),
+				new ItemStack(ItemSetup.gemGarnet,1,1),
+				new ItemStack(ItemSetup.gemBeryl,1,1),
 				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_PURIFIEDVINTEUM),
-				BlocksCommonProxy.aum,
+				new ItemStack(BlockSetup.flowers,1,3),
 				String.format("E:%d", PowerTypes.NEUTRAL.ID()), 500
 		};
 	}

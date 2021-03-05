@@ -3,6 +3,7 @@ package am2.spell.modifiers;
 import am2.api.spell.component.interfaces.ISpellModifier;
 import am2.api.spell.enums.SpellModifiers;
 import am2.items.ItemsCommonProxy;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
@@ -24,7 +25,7 @@ public class Colour implements ISpellModifier{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_CHIMERITE),
-				new ItemStack(Items.dye, 1, Short.MAX_VALUE)
+				new ItemStack(ItemSetup.dye, 1, Short.MAX_VALUE)
 		};
 	}
 

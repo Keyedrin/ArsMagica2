@@ -16,6 +16,7 @@ import am2.playerextensions.ExtendedProperties;
 import am2.utility.DimensionUtilities;
 import am2.utility.EntityUtilities;
 import am2.utility.KeystoneUtilities;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -176,7 +177,7 @@ public class Recall implements ISpellComponent, IRitualInteraction{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_ORANGE),
-				Items.compass,
+				ItemSetup.brassCompass,
 				new ItemStack(Items.map, 1, Short.MAX_VALUE),
 				Items.ender_pearl
 		};

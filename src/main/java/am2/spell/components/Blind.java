@@ -13,9 +13,11 @@ import am2.items.ItemsCommonProxy;
 import am2.particles.AMParticle;
 import am2.particles.ParticleOrbitEntity;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -114,8 +116,8 @@ public class Blind implements ISpellComponent, IRitualInteraction{
 	@Override
 	public ItemStack[] getReagents(){
 		return new ItemStack[]{
-				new ItemStack(Items.carrot),
-				new ItemStack(Items.poisonous_potato)
+				new ItemStack(Items.rotten_flesh),
+				new ItemStack(Items.spider_eye)
 		};
 	}
 

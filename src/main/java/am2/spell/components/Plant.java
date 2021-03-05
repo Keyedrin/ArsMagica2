@@ -7,6 +7,7 @@ import am2.api.spell.enums.Affinity;
 import am2.items.ItemsCommonProxy;
 import am2.particles.AMParticle;
 import am2.utility.DummyEntityPlayer;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -24,6 +25,8 @@ import java.util.HashMap;
 import java.util.Random;
 
 public class Plant implements ISpellComponent{
+
+	//TODO Make it work with TFC seeds
 
 	@Override
 	public boolean applyEffectBlock(ItemStack stack, World world, int blockx, int blocky, int blockz, int blockFace, double impactX, double impactY, double impactZ, EntityLivingBase caster){
@@ -117,9 +120,8 @@ public class Plant implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_GREEN),
-				Items.wheat_seeds,
-				new ItemStack(Blocks.sapling, 1, Short.MAX_VALUE),
-				Items.wheat_seeds
+				ItemSetup.copperHoe,
+				ItemSetup.woodenBucketWater
 		};
 	}
 

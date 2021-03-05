@@ -7,6 +7,7 @@ import am2.api.spell.enums.SpellModifiers;
 import am2.items.ItemsCommonProxy;
 import am2.spell.SpellUtils;
 import am2.utility.DummyEntityPlayer;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -23,10 +24,9 @@ public class WizardsAutumn implements ISpellComponent{
 	@Override
 	public Object[] getRecipeItems(){
 		return new Object[]{
-				Blocks.sapling,
+				ItemSetup.copperScythe,
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_GREEN),
-				Items.stick,
-				Items.iron_ingot
+				ItemSetup.stickBundle
 		};
 	}
 

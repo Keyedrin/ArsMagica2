@@ -9,6 +9,7 @@ import am2.api.spell.enums.Affinity;
 import am2.items.ItemsCommonProxy;
 import am2.particles.AMParticle;
 import am2.particles.ParticleFloatUpward;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
@@ -95,7 +96,7 @@ public class BanishRain implements ISpellComponent, IRitualInteraction{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_BLUE),
-				Items.gold_ingot
+				ItemSetup.goldIngot
 		};
 	}
 
@@ -112,7 +113,7 @@ public class BanishRain implements ISpellComponent, IRitualInteraction{
 	@Override
 	public ItemStack[] getReagents(){
 		return new ItemStack[]{
-				new ItemStack(Items.water_bucket),
+				new ItemStack(ItemSetup.woodenBucketWater),
 				new ItemStack(Blocks.snow)
 		};
 	}

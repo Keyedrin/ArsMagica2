@@ -9,6 +9,7 @@ import am2.blocks.BlocksCommonProxy;
 import am2.entities.EntitySpellEffect;
 import am2.items.ItemsCommonProxy;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.BlockSetup;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -21,8 +22,8 @@ public class Wall implements ISpellShape{
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_VINTEUMDUST),
 				BlocksCommonProxy.magicWall,
-				Blocks.cobblestone_wall,
-				Blocks.fence,
+				BlockSetup.bricks,
+				BlockSetup.bricks,
 				BlocksCommonProxy.magicWall,
 				"E:*", 2500
 		};

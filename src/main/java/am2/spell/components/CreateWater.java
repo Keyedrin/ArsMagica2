@@ -3,6 +3,8 @@ package am2.spell.components;
 import am2.api.spell.component.interfaces.ISpellComponent;
 import am2.api.spell.enums.Affinity;
 import am2.items.ItemsCommonProxy;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.entity.Entity;
@@ -50,9 +52,9 @@ public class CreateWater implements ISpellComponent{
 		}
 
 		block = world.getBlock(blockx, blocky, blockz);
-		if (world.isAirBlock(blockx, blocky, blockz) || block == Blocks.snow || block == Blocks.water || block == Blocks.flowing_water || block instanceof BlockFlower){
-			world.setBlock(blockx, blocky, blockz, Blocks.water);
-			Blocks.water.onNeighborBlockChange(world, blockx, blocky, blockz, Blocks.air);
+		if (world.isAirBlock(blockx, blocky, blockz) || block == Blocks.snow || block == BlockSetup.freshWaterStationary || block == BlockSetup.freshWaterStationary || block instanceof BlockFlower){
+			world.setBlock(blockx, blocky, blockz, BlockSetup.freshWaterStationary);
+			BlockSetup.freshWaterStationary.onNeighborBlockChange(world, blockx, blocky, blockz, Blocks.air);
 			return true;
 		}
 		return false;
@@ -99,7 +101,7 @@ public class CreateWater implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_BLUE),
-				Items.water_bucket
+				ItemSetup.redSteelBucketWater
 		};
 	}
 

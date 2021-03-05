@@ -7,6 +7,7 @@ import am2.api.spell.enums.Affinity;
 import am2.items.ItemsCommonProxy;
 import am2.spell.SpellUtils;
 import am2.utility.InventoryUtilities;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -32,10 +33,9 @@ public class PlaceBlock implements ISpellComponent{
 	@Override
 	public Object[] getRecipeItems(){
 		return new Object[]{
-				Items.stone_axe,
-				Items.stone_pickaxe,
-				Items.stone_shovel,
-				Blocks.chest
+				ItemSetup.copperAxe,
+				ItemSetup.copperPick,
+				ItemSetup.copperShovel
 		};
 	}
 

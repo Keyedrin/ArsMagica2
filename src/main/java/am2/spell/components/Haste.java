@@ -16,6 +16,7 @@ import am2.particles.ParticleFadeOut;
 import am2.particles.ParticleFloatUpward;
 import am2.particles.ParticleOrbitPoint;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
@@ -101,7 +102,8 @@ public class Haste implements ISpellComponent, IRitualInteraction{
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_YELLOW),
 				Items.redstone,
-				Items.glowstone_dust
+				ItemSetup.rum,
+				ItemSetup.seedsSugarcane
 		};
 	}
 
@@ -118,7 +120,7 @@ public class Haste implements ISpellComponent, IRitualInteraction{
 	@Override
 	public ItemStack[] getReagents(){
 		return new ItemStack[]{
-				new ItemStack(Items.glowstone_dust)
+				new ItemStack(ItemSetup.caneJuice)
 		};
 	}
 

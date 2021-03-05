@@ -9,6 +9,8 @@ import am2.blocks.BlocksCommonProxy;
 import am2.items.ItemsCommonProxy;
 import am2.playerextensions.ExtendedProperties;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -24,11 +26,12 @@ public class Contingency_Fire implements ISpellShape{
 	@Override
 	public Object[] getRecipeItems(){
 		return new Object[]{
-				Items.clock,
-				Items.magma_cream,
-				BlocksCommonProxy.tarmaRoot,
+				ItemSetup.brassClock,
+				Items.gunpowder,
+				Items.slime_ball,
+				new ItemStack(BlockSetup.flowers,1,5),
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_FIRE),
-				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_SUNSTONE),
+				new ItemStack(ItemSetup.looseRock, 1,12),
 				"E:*", 5000
 		};
 	}

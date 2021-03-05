@@ -3,6 +3,7 @@ package am2.spell.modifiers;
 import am2.api.spell.component.interfaces.ISpellModifier;
 import am2.api.spell.enums.SpellModifiers;
 import am2.items.ItemsCommonProxy;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
@@ -32,7 +33,7 @@ public class Dismembering implements ISpellModifier{
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_HIGH_CORE),
 				new ItemStack(Items.skull, 1, 1),
-				Items.bone
+				ItemSetup.bone
 		};
 	}
 

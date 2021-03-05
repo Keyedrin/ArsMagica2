@@ -15,6 +15,7 @@ import am2.particles.AMParticle;
 import am2.particles.ParticleFadeOut;
 import am2.particles.ParticleMoveOnHeading;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
@@ -99,8 +100,8 @@ public class SwiftSwim implements ISpellComponent, IRitualInteraction{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_BLUE),
-				Items.fish,
-				Items.fishing_rod
+				ItemSetup.seashell,
+				ItemSetup.fishingRod
 		};
 	}
 
@@ -117,7 +118,7 @@ public class SwiftSwim implements ISpellComponent, IRitualInteraction{
 	@Override
 	public ItemStack[] getReagents(){
 		return new ItemStack[]{
-				new ItemStack(Items.fish)
+				new ItemStack(ItemSetup.scallop)
 		};
 	}
 

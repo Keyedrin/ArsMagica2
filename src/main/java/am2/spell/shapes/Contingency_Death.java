@@ -10,6 +10,8 @@ import am2.blocks.BlocksCommonProxy;
 import am2.items.ItemsCommonProxy;
 import am2.playerextensions.ExtendedProperties;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -28,12 +30,12 @@ public class Contingency_Death implements ISpellShape{
 		return new Object[]{
 				Items.clock,
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_ENDER),
-				Blocks.stone,
-				Blocks.stone_slab,
-				Blocks.stone_slab,
-				Blocks.stone_slab,
-				Items.blaze_powder,
-				BlocksCommonProxy.tarmaRoot,
+				BlockSetup.stoneIgIn,
+				ItemSetup.looseRock,
+				ItemSetup.looseRock,
+				ItemSetup.looseRock,
+				new ItemStack(ItemSetup.gemJade,1,2),
+				BlockSetup.flowers2,
 				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
 				String.format("E:%d", PowerTypes.DARK.ID()), 5000
 		};

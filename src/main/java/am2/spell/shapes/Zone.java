@@ -9,6 +9,8 @@ import am2.blocks.BlocksCommonProxy;
 import am2.entities.EntitySpellEffect;
 import am2.items.ItemsCommonProxy;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -45,10 +47,13 @@ public class Zone implements ISpellShape{
 	@Override
 	public Object[] getRecipeItems(){
 		return new Object[]{
-				BlocksCommonProxy.tarmaRoot,
-				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_MOONSTONE),
-				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_SUNSTONE),
-				Items.diamond
+				new ItemStack(BlockSetup.flowers2,1,4),
+				new ItemStack(ItemSetup.gemJade,1,2),
+				new ItemStack(BlockSetup.flowers2,1,5),
+				new ItemStack(ItemSetup.gemEmerald,1,2),
+				new ItemStack(BlockSetup.flowers2,1,6),
+				new ItemStack(ItemSetup.gemDiamond,1,2),
+				new ItemStack(BlockSetup.flowers2,1,7)
 		};
 	}
 

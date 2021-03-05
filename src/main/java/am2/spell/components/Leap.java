@@ -13,6 +13,8 @@ import am2.buffs.BuffList;
 import am2.items.ItemsCommonProxy;
 import am2.particles.AMParticle;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
@@ -98,7 +100,7 @@ public class Leap implements ISpellComponent, IRitualInteraction{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_WHITE),
-				Blocks.hopper
+				BlockSetup.hopper
 		};
 	}
 
@@ -115,7 +117,8 @@ public class Leap implements ISpellComponent, IRitualInteraction{
 	@Override
 	public ItemStack[] getReagents(){
 		return new ItemStack[]{
-				new ItemStack(Items.fermented_spider_eye)
+				new ItemStack(Items.spider_eye),
+				new ItemStack(ItemSetup.bone)
 		};
 	}
 

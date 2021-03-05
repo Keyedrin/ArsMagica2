@@ -11,6 +11,7 @@ import am2.particles.ParticleOrbitPoint;
 import am2.playerextensions.ExtendedProperties;
 import am2.spell.SpellUtils;
 import am2.utility.DummyEntityPlayer;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -45,8 +46,8 @@ public class Appropriation implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				Items.ender_pearl,
-				new ItemStack(BlocksCommonProxy.AMOres, 1, BlocksCommonProxy.AMOres.META_CHIMERITE_BLOCK),
-				Blocks.chest
+				ItemSetup.gemAmethyst,
+				ItemSetup.leatherBag
 		};
 	}
 

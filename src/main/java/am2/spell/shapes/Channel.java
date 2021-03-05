@@ -11,6 +11,7 @@ import am2.spell.SpellUtils;
 import am2.spell.components.Attract;
 import am2.spell.components.Repel;
 import am2.spell.components.Telekinesis;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -46,7 +47,7 @@ public class Channel implements ISpellShape{
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_ARCANE),
-				BlocksCommonProxy.tarmaRoot,
+				ItemSetup.weldRoot,
 				"E:*", 500
 		};
 	}

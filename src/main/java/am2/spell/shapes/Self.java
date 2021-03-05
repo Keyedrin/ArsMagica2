@@ -9,6 +9,7 @@ import am2.blocks.BlocksCommonProxy;
 import am2.items.ItemsCommonProxy;
 import am2.spell.SpellHelper;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.BlockSetup;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -39,7 +40,7 @@ public class Self implements ISpellShape{
 	@Override
 	public Object[] getRecipeItems(){
 		return new Object[]{
-				BlocksCommonProxy.aum,
+				new ItemStack(BlockSetup.flowers, 1, 2),
 				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_VINTEUMDUST),
 				ItemsCommonProxy.lesserFocus,
 				String.format("E:%d", PowerTypes.NEUTRAL.ID()), 500

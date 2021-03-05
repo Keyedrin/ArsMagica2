@@ -10,6 +10,8 @@ import am2.buffs.BuffEffectShrink;
 import am2.buffs.BuffList;
 import am2.items.ItemsCommonProxy;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.boss.IBossDisplayData;
@@ -26,10 +28,11 @@ public class Shrink implements ISpellComponent, IRitualInteraction{
 	@Override
 	public Object[] getRecipeItems(){
 		return new Object[]{
-				Blocks.brown_mushroom,
-				Blocks.stone_button,
-				Items.bone,
-				Items.gold_nugget,
+				BlockSetup.fungi,
+				new ItemStack(BlockSetup.fungi, 1,1),
+				BlockSetup.buttonWood,
+				ItemSetup.boneNeedle,
+				ItemSetup.ironNeedle,
 				Items.spider_eye,
 				ItemsCommonProxy.manaCake
 		};
@@ -103,7 +106,7 @@ public class Shrink implements ISpellComponent, IRitualInteraction{
 	@Override
 	public ItemStack[] getReagents(){
 		return new ItemStack[]{
-				new ItemStack(Items.blaze_rod)
+				new ItemStack(ItemSetup.tequila)
 		};
 	}
 

@@ -19,6 +19,8 @@ import java.util.Random;
 
 public class Plow implements ISpellComponent{
 
+	//TODO TFC dirt and grass to farmland
+
 	@Override
 	public boolean applyEffectBlock(ItemStack stack, World world, int blockx, int blocky, int blockz, int blockFace, double impactX, double impactY, double impactZ, EntityLivingBase caster){
 		Block block = world.getBlock(blockx, blocky, blockz);

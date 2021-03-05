@@ -9,6 +9,7 @@ import am2.items.ItemsCommonProxy;
 import am2.particles.AMParticle;
 import am2.spell.SpellHelper;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
@@ -19,6 +20,8 @@ import java.util.EnumSet;
 import java.util.Random;
 
 public class PhysicalDamage implements ISpellComponent{
+
+	//TODO blunt damage
 
 	@Override
 	public boolean applyEffectBlock(ItemStack stack, World world, int blockx, int blocky, int blockz, int blockFace, double impactX, double impactY, double impactZ, EntityLivingBase caster){
@@ -81,7 +84,7 @@ public class PhysicalDamage implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_RED),
-				Items.iron_sword
+				ItemSetup.stoneHammer
 		};
 	}
 

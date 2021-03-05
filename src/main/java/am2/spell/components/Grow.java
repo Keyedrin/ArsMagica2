@@ -12,6 +12,8 @@ import am2.particles.ParticleFadeOut;
 import am2.particles.ParticleFloatUpward;
 import am2.particles.ParticleOrbitPoint;
 import am2.utility.DummyEntityPlayer;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
@@ -31,10 +33,11 @@ import java.util.Random;
 
 
 public class Grow implements ISpellComponent{
-
+	//Do not need Ars Magica specific flowers, there are enough new flower types to work with in TFC
+/*
 	private final static ArrayList<AMFlower> growableAMflowers = new ArrayList<AMFlower>(Arrays.asList(
 			BlocksCommonProxy.cerublossom, BlocksCommonProxy.desertNova, BlocksCommonProxy.wakebloom, BlocksCommonProxy.aum, BlocksCommonProxy.tarmaRoot));
-
+*/
 	@Override
 	public boolean applyEffectBlock(ItemStack stack, World world, int blockx, int blocky, int blockz, int blockFace, double impactX, double impactY, double impactZ, EntityLivingBase caster){
 
@@ -47,7 +50,7 @@ public class Grow implements ISpellComponent{
 		if (event.getResult() == Result.ALLOW){
 			return true;
 		}
-
+/*
 		//EoD: Spawn AM2 flowers with 3% chance. This has to be the first one in the list to override all others
 		if (world.rand.nextInt(100) < 3 && block.isNormalCube() &&
 				(world.getBlock(blockx, blocky + 1, blockz).isAir(null, 0, 0, 0) || world.getBlock(blockx, blocky + 1, blockz) == Blocks.tallgrass)){
@@ -84,9 +87,10 @@ public class Grow implements ISpellComponent{
 				return true;
 			}
 		}
-
+*/
+		//TODO Make this work on all the grass variants
 		//EoD: If there is already tallgrass present, let's grow it further 20% of the time.
-		if (block == Blocks.tallgrass){
+		if (block == BlockSetup.grass){
 			if (Blocks.tallgrass.canBlockStay(world, blockx, blocky + 1, blockz)){
 				if (!world.isRemote && world.rand.nextInt(10) < 2){
 					world.setBlock(blockx, blocky, blockz, Blocks.tallgrass, 1, 2);
@@ -105,6 +109,7 @@ public class Grow implements ISpellComponent{
 				return true;
 			}
 		}
+		//TODO Make function like TFC fertilizer, rename spell effect to Fertilize
 
 		// EoD: Apply vanilla bonemeal effect to growables 30% of the time. This is the generic grow section.
 		//      See ItemDye.applyBonemeal().
@@ -177,8 +182,8 @@ public class Grow implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_GREEN),
-				new ItemStack(Items.dye, 1, 15),
-				BlocksCommonProxy.witchwoodLog
+				new ItemStack(ItemSetup.dye, 1, 15),
+				ItemSetup.fertilizer
 		};
 	}
 

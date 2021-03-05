@@ -9,6 +9,7 @@ import am2.items.ItemsCommonProxy;
 import am2.particles.AMParticle;
 import am2.particles.ParticleOrbitEntity;
 import am2.particles.ParticleOrbitPoint;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -109,7 +110,8 @@ public class DivineIntervention implements ISpellComponent{
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_PURPLE),
 				Items.bed,
-				Items.ender_pearl
+				Items.ender_pearl,
+				new ItemStack(ItemSetup.gemAmethyst,1,3)
 		};
 	}
 

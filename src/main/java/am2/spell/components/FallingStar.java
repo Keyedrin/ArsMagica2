@@ -7,6 +7,7 @@ import am2.blocks.BlocksCommonProxy;
 import am2.entities.EntityThrownRock;
 import am2.items.ItemsCommonProxy;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
@@ -27,7 +28,7 @@ public class FallingStar implements ISpellComponent{
 				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_ARCANE),
 				BlocksCommonProxy.manaBattery,
-				Items.lava_bucket
+				new ItemStack(ItemSetup.gemOpal, 1, 4)
 		};
 	}
 

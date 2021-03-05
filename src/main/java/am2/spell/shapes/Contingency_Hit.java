@@ -9,6 +9,8 @@ import am2.blocks.BlocksCommonProxy;
 import am2.items.ItemsCommonProxy;
 import am2.playerextensions.ExtendedProperties;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -24,11 +26,11 @@ public class Contingency_Hit implements ISpellShape{
 	@Override
 	public Object[] getRecipeItems(){
 		return new Object[]{
-				Items.clock,
+				ItemSetup.brassClock,
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_LIGHTNING),
-				Items.diamond_sword,
-				BlocksCommonProxy.tarmaRoot,
-				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_MOONSTONE),
+				ItemSetup.wroughtIronMace,
+				new ItemStack(BlockSetup.flowers2,1,2),
+				ItemSetup.bismuthIngot,
 				"E:*", 5000
 		};
 	}

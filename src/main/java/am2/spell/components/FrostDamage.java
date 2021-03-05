@@ -10,6 +10,7 @@ import am2.items.ItemsCommonProxy;
 import am2.particles.AMParticle;
 import am2.spell.SpellHelper;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
@@ -18,6 +19,8 @@ import net.minecraft.world.World;
 
 import java.util.EnumSet;
 import java.util.Random;
+
+//TODO Blunt damage
 
 public class FrostDamage implements ISpellComponent{
 
@@ -83,7 +86,7 @@ public class FrostDamage implements ISpellComponent{
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_BLUE),
 				Items.snowball,
-				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_BLUETOPAZ)
+				new ItemStack(ItemSetup.gemSapphire)
 		};
 	}
 

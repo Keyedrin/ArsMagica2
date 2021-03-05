@@ -14,9 +14,11 @@ import am2.particles.AMParticle;
 import am2.particles.ParticleFloatUpward;
 import am2.particles.ParticleOrbitEntity;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
@@ -28,21 +30,12 @@ public class Fury implements ISpellComponent, IRitualInteraction{
 	@Override
 	public Object[] getRecipeItems(){
 		return new Object[]{
-				Items.fish,
-				Items.fish,
-				Items.fish,
-				Items.fish,
-				Items.fish,
-				Items.fish,
-				Items.fish,
-				Items.fish,
-				Items.fish,
-				Items.fish,
-				Items.fish,
-				Items.fish,
-				Items.fish,
-				Items.fish,
-				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_SUNSTONE)
+				ItemSetup.whiskey,
+				ItemSetup.barleyWhiskey,
+				ItemSetup.cornWhiskey,
+				ItemSetup.riceWhiskey,
+				ItemSetup.ryeWhiskey,
+				new ItemStack(ItemSetup.gemAgate, 1, 2)
 		};
 	}
 
@@ -125,8 +118,7 @@ public class Fury implements ISpellComponent, IRitualInteraction{
 	@Override
 	public ItemStack[] getReagents(){
 		return new ItemStack[]{
-				new ItemStack(Items.potionitem, 1, 8194),
-				new ItemStack(Items.potionitem, 1, 8201)
+				new ItemStack(ItemSetup.beer),
 		};
 	}
 

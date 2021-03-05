@@ -10,6 +10,7 @@ import am2.particles.AMParticle;
 import am2.particles.ParticleApproachPoint;
 import am2.playerextensions.ExtendedProperties;
 import am2.utility.MathUtilities;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -137,7 +138,7 @@ public class Attract implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_BLACK),
-				Items.iron_ingot
+				ItemSetup.roseGoldIngot
 		};
 	}
 

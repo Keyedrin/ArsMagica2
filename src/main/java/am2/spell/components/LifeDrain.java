@@ -11,6 +11,8 @@ import am2.particles.AMParticle;
 import am2.particles.ParticleArcToEntity;
 import am2.spell.SpellHelper;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -91,8 +93,8 @@ public class LifeDrain implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_BLACK),
-				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_SUNSTONE),
-				BlocksCommonProxy.aum
+				new ItemStack(ItemSetup.gemBeryl, 1, 2),
+				new ItemStack(BlockSetup.flowers, 1, 2)
 		};
 	}
 

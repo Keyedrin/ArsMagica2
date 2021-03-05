@@ -7,6 +7,7 @@ import am2.items.ItemsCommonProxy;
 import am2.particles.AMParticle;
 import am2.particles.ParticleFadeOut;
 import am2.particles.ParticleFloatUpward;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockTallGrass;
@@ -18,6 +19,8 @@ import net.minecraft.world.World;
 
 import java.util.EnumSet;
 import java.util.Random;
+
+//TODO set to work for all stone variants, dirt variants, sand variants, fresh and salt water etc.
 
 public class Drought implements ISpellComponent{
 
@@ -126,8 +129,8 @@ public class Drought implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_ORANGE),
-				Blocks.sand,
-				Blocks.deadbush
+				ItemSetup.boneFlute,
+				ItemSetup.lime
 		};
 	}
 

@@ -12,6 +12,7 @@ import am2.particles.AMParticle;
 import am2.particles.ParticleFadeOut;
 import am2.particles.ParticleOrbitEntity;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
@@ -86,8 +87,10 @@ public class ChronoAnchor implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_WHITE),
-				Items.clock,
-				Items.nether_star
+				ItemSetup.brassClock,
+				ItemSetup.brassCompass,
+				ItemSetup.sextant,
+				ItemSetup.gemDiamond
 		};
 	}
 

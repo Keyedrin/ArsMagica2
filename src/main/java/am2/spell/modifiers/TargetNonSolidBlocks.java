@@ -4,6 +4,8 @@ import am2.api.spell.component.interfaces.ISpellModifier;
 import am2.api.spell.enums.SpellModifiers;
 import am2.blocks.BlocksCommonProxy;
 import am2.items.ItemsCommonProxy;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
@@ -34,10 +36,10 @@ public class TargetNonSolidBlocks implements ISpellModifier{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_WATER),
-				Items.potionitem,
-				Blocks.red_flower,
-				Blocks.brown_mushroom,
-				BlocksCommonProxy.cerublossom
+				ItemSetup.waterBottle,
+				BlockSetup.flowers2,
+				BlockSetup.fungi,
+				new ItemStack(BlockSetup.flowers2,1,1)
 		};
 	}
 

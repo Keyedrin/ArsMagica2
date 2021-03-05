@@ -11,6 +11,8 @@ import am2.blocks.BlocksCommonProxy;
 import am2.entities.EntityRiftStorage;
 import am2.items.ItemsCommonProxy;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -108,7 +110,9 @@ public class Rift implements ISpellComponent, IRitualInteraction{
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_WHITE),
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_PURPLE),
-				Blocks.chest,
+				ItemSetup.leatherBag,
+				BlockSetup.vessel,
+				ItemSetup.potterySmallVessel,
 				Items.ender_eye
 		};
 	}

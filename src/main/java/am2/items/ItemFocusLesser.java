@@ -1,6 +1,7 @@
 package am2.items;
 
 import am2.texture.ResourceManager;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -14,9 +15,9 @@ public class ItemFocusLesser extends ItemFocus implements ISpellFocus{
 	@Override
 	public Object[] getRecipeItems(){
 		return new Object[]{
-				" G ", "GRG", " G ",
-				'G', Items.gold_nugget,
-				'R', Blocks.glass
+				"GRG",
+				'G', ItemSetup.goldIngot,
+				'R', Blocks.glass_pane
 		};
 	}
 

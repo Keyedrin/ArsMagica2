@@ -13,9 +13,11 @@ import am2.items.ItemsCommonProxy;
 import am2.particles.AMParticle;
 import am2.particles.ParticleOrbitEntity;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.BlockSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -99,6 +101,7 @@ public class NightVision implements ISpellComponent, IRitualInteraction{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_GREEN),
+				Items.spider_eye,
 				"P:!0 & 1 & 2 & !3 & 2+6"
 		};
 	}
@@ -116,7 +119,7 @@ public class NightVision implements ISpellComponent, IRitualInteraction{
 	@Override
 	public ItemStack[] getReagents(){
 		return new ItemStack[]{
-				new ItemStack(Blocks.torch)
+				new ItemStack(BlockSetup.torch)
 		};
 	}
 

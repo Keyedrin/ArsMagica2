@@ -13,6 +13,7 @@ import am2.buffs.BuffList;
 import am2.items.ItemsCommonProxy;
 import am2.particles.*;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
@@ -101,8 +102,9 @@ public class GravityWell implements ISpellComponent, IRitualInteraction{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_GREEN),
-				Items.string,
-				Blocks.stone
+				ItemSetup.silkString,
+				ItemSetup.leadSheet,
+				ItemSetup.vodka
 		};
 	}
 
@@ -122,7 +124,7 @@ public class GravityWell implements ISpellComponent, IRitualInteraction{
 	@Override
 	public ItemStack[] getReagents(){
 		return new ItemStack[]{
-				new ItemStack(Items.blaze_powder)
+				new ItemStack(ItemSetup.seedsPotato)
 		};
 	}
 

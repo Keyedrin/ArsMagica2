@@ -13,6 +13,8 @@ import am2.playerextensions.AffinityData;
 import am2.playerextensions.ExtendedProperties;
 import am2.spell.SpellHelper;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -109,7 +111,8 @@ public class Heal implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_GREEN),
-				BlocksCommonProxy.aum
+				new ItemStack(BlockSetup.flowers,1,4),
+				ItemSetup.sterileBandage
 		};
 	}
 

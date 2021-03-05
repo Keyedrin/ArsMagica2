@@ -6,6 +6,7 @@ import am2.api.spell.enums.Affinity;
 import am2.items.ItemsCommonProxy;
 import am2.particles.AMParticle;
 import am2.particles.ParticleOrbitEntity;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -16,6 +17,8 @@ import net.minecraft.world.World;
 
 import java.util.EnumSet;
 import java.util.Random;
+
+//TODO Might be useless, maybe disable, do more tests first
 
 public class Accelerate implements ISpellComponent{
 
@@ -77,7 +80,7 @@ public class Accelerate implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_YELLOW),
-				Items.leather_boots,
+				ItemSetup.leatherBoots,
 				Items.redstone
 		};
 	}

@@ -29,6 +29,7 @@ import am2.spell.SpellUtils;
 import am2.spell.components.Summon;
 import am2.spell.shapes.Binding;
 import am2.utility.KeyValuePair;
+import com.dunk.tfc.BlockSetup;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
@@ -191,34 +192,34 @@ public class TileEntityCraftingAltar extends TileEntityAMPower implements IMulti
 		for (int i = 0; i < augMatls.length; ++i)
 			primary.addAllowedBlock(augMatl_primary[i], -1, 0, 2, augMatls[i], augMetas[i]);
 
-		primary.addAllowedBlock(0, 0, -2, Blocks.stone_brick_stairs, 2);
+		primary.addAllowedBlock(0, 0, -2, Blocks.stone_brick_stairs, 0);
 		primary.addAllowedBlock(0, 0, -1, Blocks.stonebrick, 0);
 		primary.addAllowedBlock(0, 0, 0, BlocksCommonProxy.craftingAltar);
 		primary.addAllowedBlock(0, 0, 1, Blocks.stonebrick, 0);
-		primary.addAllowedBlock(0, 0, 2, Blocks.stone_brick_stairs, 3);
+		primary.addAllowedBlock(0, 0, 2, Blocks.stone_brick_stairs, 0);
 
 		for (int i = 0; i < augMatls.length; ++i)
 			primary.addAllowedBlock(augMatl_primary[i], 1, 0, -2, augMatls[i], augMetas[i]);
 
-		primary.addAllowedBlock(1, 0, -1, Blocks.stone_brick_stairs, 1);
-		primary.addAllowedBlock(1, 0, 0, Blocks.stone_brick_stairs, 1);
-		primary.addAllowedBlock(1, 0, 1, Blocks.stone_brick_stairs, 1);
+		primary.addAllowedBlock(1, 0, -1, Blocks.stone_brick_stairs, 0);
+		primary.addAllowedBlock(1, 0, 0, Blocks.stone_brick_stairs, 0);
+		primary.addAllowedBlock(1, 0, 1, Blocks.stone_brick_stairs, 0);
 
 		for (int i = 0; i < augMatls.length; ++i)
 			primary.addAllowedBlock(augMatl_primary[i], 1, 0, 2, augMatls[i], augMetas[i]);
 
 		//row 1
 		primary.addAllowedBlock(1, -1, -2, Blocks.stonebrick, 0);
-		primary.addAllowedBlock(1, -1, -1, Blocks.stone_brick_stairs, 7);
-		primary.addAllowedBlock(1, -1, 1, Blocks.stone_brick_stairs, 6);
+		primary.addAllowedBlock(1, -1, -1, Blocks.stone_brick_stairs, 0);
+		primary.addAllowedBlock(1, -1, 1, Blocks.stone_brick_stairs, 0);
 		primary.addAllowedBlock(1, -1, 2, Blocks.stonebrick, 0);
 
 		primary.addAllowedBlock(0, -1, -2, BlocksCommonProxy.magicWall, 0);
 		primary.addAllowedBlock(0, -1, 2, BlocksCommonProxy.magicWall, 0);
 
 		primary.addAllowedBlock(-1, -1, -2, Blocks.stonebrick, 0);
-		primary.addAllowedBlock(-1, -1, -1, Blocks.stone_brick_stairs, 7);
-		primary.addAllowedBlock(-1, -1, 1, Blocks.stone_brick_stairs, 6);
+		primary.addAllowedBlock(-1, -1, -1, Blocks.stone_brick_stairs, 0);
+		primary.addAllowedBlock(-1, -1, 1, Blocks.stone_brick_stairs, 0);
 		primary.addAllowedBlock(-1, -1, 2, Blocks.stonebrick, 0);
 
 		//row 2
@@ -279,8 +280,8 @@ public class TileEntityCraftingAltar extends TileEntityAMPower implements IMulti
 		sandstone_primary.replaceAllBlocksOfType(Blocks.stone_brick_stairs, Blocks.sandstone_stairs);
 
 		witchwood_primary = primary.copyGroup("main", "main_witchwood");
-		witchwood_primary.replaceAllBlocksOfType(Blocks.stonebrick, BlocksCommonProxy.witchwoodPlanks);
-		witchwood_primary.replaceAllBlocksOfType(Blocks.stone_brick_stairs, BlocksCommonProxy.witchwoodStairs);
+		witchwood_primary.replaceAllBlocksOfType(Blocks.stonebrick, 0, BlockSetup.planks,1);
+		witchwood_primary.replaceAllBlocksOfType(Blocks.stone_brick_stairs, 0, BlockSetup.fence,1);
 
 		//Secondary
 		secondary = new MultiblockStructureDefinition("craftingAltar");
@@ -311,63 +312,63 @@ public class TileEntityCraftingAltar extends TileEntityAMPower implements IMulti
 		for (int i = 0; i < augMatls.length; ++i)
 			secondary.addAllowedBlock(augMatl_secondary[i], -2, 0, -1, augMatls[i], augMetas[i]);
 
-		secondary.addAllowedBlock(-1, 0, -1, Blocks.stone_brick_stairs, 2);
-		secondary.addAllowedBlock(0, 0, -1, Blocks.stone_brick_stairs, 2);
-		secondary.addAllowedBlock(1, 0, -1, Blocks.stone_brick_stairs, 2);
+		secondary.addAllowedBlock(-1, 0, -1, BlockSetup.woodHoriz, 8);
+		secondary.addAllowedBlock(0, 0, -1, BlockSetup.woodHoriz, 8);
+		secondary.addAllowedBlock(1, 0, -1, BlockSetup.woodHoriz, 8);
 
 		for (int i = 0; i < augMatls.length; ++i)
 			secondary.addAllowedBlock(augMatl_secondary[i], 2, 0, -1, augMatls[i], augMetas[i]);
 
-		secondary.addAllowedBlock(-2, 0, 0, Blocks.stone_brick_stairs, 0);
-		secondary.addAllowedBlock(-1, 0, 0, Blocks.stonebrick, 0);
+		secondary.addAllowedBlock(-2, 0, 0, BlockSetup.woodHoriz, 0);
+		secondary.addAllowedBlock(-1, 0, 0, BlockSetup.planks, 0);
 		secondary.addAllowedBlock(0, 0, 0, BlocksCommonProxy.craftingAltar);
-		secondary.addAllowedBlock(1, 0, 0, Blocks.stonebrick, 0);
-		secondary.addAllowedBlock(2, 0, 0, Blocks.stone_brick_stairs, 1);
+		secondary.addAllowedBlock(1, 0, 0, BlockSetup.planks, 0);
+		secondary.addAllowedBlock(2, 0, 0, BlockSetup.woodHoriz, 0);
 
 		for (int i = 0; i < augMatls.length; ++i)
 			secondary.addAllowedBlock(augMatl_secondary[i], -2, 0, 1, augMatls[i], augMetas[i]);
 
-		secondary.addAllowedBlock(-1, 0, 1, Blocks.stone_brick_stairs, 3);
-		secondary.addAllowedBlock(0, 0, 1, Blocks.stone_brick_stairs, 3);
-		secondary.addAllowedBlock(1, 0, 1, Blocks.stone_brick_stairs, 3);
+		secondary.addAllowedBlock(-1, 0, 1, BlockSetup.woodHoriz, 8);
+		secondary.addAllowedBlock(0, 0, 1, BlockSetup.woodHoriz, 8);
+		secondary.addAllowedBlock(1, 0, 1, BlockSetup.woodHoriz, 8);
 
 		for (int i = 0; i < augMatls.length; ++i)
 			secondary.addAllowedBlock(augMatl_secondary[i], 2, 0, 1, augMatls[i], augMetas[i]);
 
 		//row 1
-		secondary.addAllowedBlock(-2, -1, 1, Blocks.stonebrick, 0);
-		secondary.addAllowedBlock(-1, -1, 1, Blocks.stone_brick_stairs, 5);
-		secondary.addAllowedBlock(1, -1, 1, Blocks.stone_brick_stairs, 4);
-		secondary.addAllowedBlock(2, -1, 1, Blocks.stonebrick, 0);
+		secondary.addAllowedBlock(-2, -1, 1, BlockSetup.woodVert, 0);
+		secondary.addAllowedBlock(-1, -1, 1, BlockSetup.fence, 0);
+		secondary.addAllowedBlock(1, -1, 1, BlockSetup.fence, 0);
+		secondary.addAllowedBlock(2, -1, 1, BlockSetup.woodVert, 0);
 
 		secondary.addAllowedBlock(-2, -1, 0, BlocksCommonProxy.magicWall, 0);
 		secondary.addAllowedBlock(2, -1, 0, BlocksCommonProxy.magicWall, 0);
 
-		secondary.addAllowedBlock(-2, -1, -1, Blocks.stonebrick, 0);
-		secondary.addAllowedBlock(-1, -1, -1, Blocks.stone_brick_stairs, 5);
-		secondary.addAllowedBlock(1, -1, -1, Blocks.stone_brick_stairs, 4);
-		secondary.addAllowedBlock(2, -1, -1, Blocks.stonebrick, 0);
+		secondary.addAllowedBlock(-2, -1, -1, BlockSetup.woodVert, 0);
+		secondary.addAllowedBlock(-1, -1, -1, BlockSetup.fence, 0);
+		secondary.addAllowedBlock(1, -1, -1, BlockSetup.fence, 0);
+		secondary.addAllowedBlock(2, -1, -1, BlockSetup.woodVert, 0);
 
 		//row 2
-		secondary.addAllowedBlock(-2, -2, 1, Blocks.stonebrick, 0);
-		secondary.addAllowedBlock(2, -2, 1, Blocks.stonebrick, 0);
+		secondary.addAllowedBlock(-2, -2, 1, BlockSetup.woodVert, 0);
+		secondary.addAllowedBlock(2, -2, 1, BlockSetup.woodVert, 0);
 
 		secondary.addAllowedBlock(-2, -2, 0, BlocksCommonProxy.magicWall, 0);
 		secondary.addAllowedBlock(2, -2, 0, BlocksCommonProxy.magicWall, 0);
 
-		secondary.addAllowedBlock(-2, -2, -1, Blocks.stonebrick, 0);
-		secondary.addAllowedBlock(2, -2, -1, Blocks.stonebrick, 0);
+		secondary.addAllowedBlock(-2, -2, -1, BlockSetup.woodVert, 0);
+		secondary.addAllowedBlock(2, -2, -1, BlockSetup.woodVert, 0);
 
 
 		//row 3
-		secondary.addAllowedBlock(-2, -3, 1, Blocks.stonebrick, 0);
-		secondary.addAllowedBlock(2, -3, 1, Blocks.stonebrick, 0);
+		secondary.addAllowedBlock(-2, -3, 1, BlockSetup.woodVert, 0);
+		secondary.addAllowedBlock(2, -3, 1, BlockSetup.woodVert, 0);
 
 		secondary.addAllowedBlock(-2, -3, 0, BlocksCommonProxy.magicWall, 0);
 		secondary.addAllowedBlock(2, -3, 0, BlocksCommonProxy.magicWall, 0);
 
-		secondary.addAllowedBlock(-2, -3, -1, Blocks.stonebrick, 0);
-		secondary.addAllowedBlock(2, -3, -1, Blocks.stonebrick, 0);
+		secondary.addAllowedBlock(-2, -3, -1, BlockSetup.woodVert, 0);
+		secondary.addAllowedBlock(2, -3, -1, BlockSetup.woodVert, 0);
 
 		//row 4
 		for (int i = -2; i <= 2; ++i){
@@ -376,7 +377,7 @@ public class TileEntityCraftingAltar extends TileEntityAMPower implements IMulti
 					for (int n = 0; n < augMatls.length; ++n)
 						secondary.addAllowedBlock(augMatl_secondary[n], i, -4, j, augMatls[n], augMetas[n]);
 				}else{
-					secondary.addAllowedBlock(i, -4, j, Blocks.stonebrick, 0);
+					secondary.addAllowedBlock(i, -4, j, BlockSetup.planks, 0);
 				}
 			}
 		}
@@ -406,8 +407,8 @@ public class TileEntityCraftingAltar extends TileEntityAMPower implements IMulti
 		sandstone_secondary.replaceAllBlocksOfType(Blocks.stone_brick_stairs, Blocks.sandstone_stairs);
 
 		witchwood_secondary = secondary.copyGroup("main", "main_witchwood");
-		witchwood_secondary.replaceAllBlocksOfType(Blocks.stonebrick, BlocksCommonProxy.witchwoodPlanks);
-		witchwood_secondary.replaceAllBlocksOfType(Blocks.stone_brick_stairs, BlocksCommonProxy.witchwoodStairs);
+		witchwood_secondary.replaceAllBlocksOfType(Blocks.stonebrick, 0, BlockSetup.planks,1);
+		witchwood_secondary.replaceAllBlocksOfType(Blocks.stone_brick_stairs, 0, BlockSetup.fence,1);
 
 	}
 

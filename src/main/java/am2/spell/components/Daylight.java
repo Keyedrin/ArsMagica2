@@ -3,6 +3,7 @@ package am2.spell.components;
 import am2.api.spell.component.interfaces.ISpellComponent;
 import am2.api.spell.enums.Affinity;
 import am2.items.ItemsCommonProxy;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
@@ -13,13 +14,15 @@ import net.minecraft.world.WorldServer;
 import java.util.EnumSet;
 import java.util.Random;
 
+//TODO make function on the TFC timescale
+
 public class Daylight implements ISpellComponent{
 
 	@Override
 	public Object[] getRecipeItems(){
 		return new Object[]{
-				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_SUNSTONE),
-				Items.clock,
+				new ItemStack(ItemSetup.gemTopaz, 1, 4),
+				ItemSetup.brassClock,
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_PURE)
 		};
 	}

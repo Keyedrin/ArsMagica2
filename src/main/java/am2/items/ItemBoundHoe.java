@@ -5,6 +5,7 @@ import am2.spell.SpellHelper;
 import am2.spell.SpellUtils;
 import am2.texture.ResourceManager;
 import am2.utility.InventoryUtilities;
+import com.dunk.tfc.Items.Tools.ItemCustomHoe;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -18,7 +19,7 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.MovingObjectPosition.MovingObjectType;
 import net.minecraft.world.World;
 
-public class ItemBoundHoe extends ItemHoe implements IBoundItem{
+public class ItemBoundHoe extends ItemCustomHoe implements IBoundItem{
 
 	public ItemBoundHoe(ToolMaterial par2ToolMaterial){
 		super(par2ToolMaterial);

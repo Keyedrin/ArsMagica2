@@ -8,6 +8,7 @@ import am2.items.ItemBindingCatalyst;
 import am2.items.ItemsCommonProxy;
 import am2.spell.SpellUtils;
 import am2.utility.InventoryUtilities;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -66,12 +67,12 @@ public class Binding implements ISpellShape{
 	@Override
 	public Object[] getRecipeItems(){
 		return new Object[]{
-				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_CHIMERITE),
-				Items.wooden_sword,
-				Items.stone_shovel,
-				Items.iron_hoe,
-				Items.golden_axe,
-				Items.diamond_pickaxe,
+				ItemSetup.gemJasper,
+				ItemSetup.copperSword,
+				ItemSetup.copperShovel,
+				ItemSetup.copperHoe,
+				ItemSetup.copperAxe,
+				ItemSetup.copperPick,
 				new ItemStack(ItemsCommonProxy.bindingCatalyst, 1, Short.MAX_VALUE)
 		};
 	}

@@ -13,6 +13,7 @@ import am2.particles.AMParticle;
 import am2.particles.ParticleApproachEntity;
 import am2.playerextensions.ExtendedProperties;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.BlockSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -118,7 +119,7 @@ public class LifeTap implements ISpellComponent, IRitualInteraction{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_BLACK),
-				BlocksCommonProxy.aum
+				new ItemStack(BlockSetup.flowers, 1, 2)
 		};
 	}
 

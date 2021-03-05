@@ -10,6 +10,7 @@ import am2.particles.AMParticle;
 import am2.particles.ParticleApproachPoint;
 import am2.playerextensions.ExtendedProperties;
 import am2.utility.MathUtilities;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -133,7 +134,7 @@ public class Telekinesis implements ISpellComponent{
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_PURPLE),
 				Blocks.sticky_piston,
-				Blocks.chest
+				ItemSetup.clayBucketEmpty
 		};
 	}
 

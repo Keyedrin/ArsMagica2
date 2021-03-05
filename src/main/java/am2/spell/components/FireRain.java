@@ -6,6 +6,8 @@ import am2.api.spell.enums.SpellModifiers;
 import am2.entities.EntitySpellEffect;
 import am2.items.ItemsCommonProxy;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
@@ -25,9 +27,9 @@ public class FireRain implements ISpellComponent{
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_FIRE),
 				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
-				Blocks.netherrack,
+				new ItemStack(BlockSetup.candleGoldOff),
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_FIRE),
-				Items.lava_bucket
+				new ItemStack(ItemSetup.gemRuby,1,4)
 		};
 	}
 

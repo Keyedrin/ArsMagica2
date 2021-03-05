@@ -15,6 +15,8 @@ import am2.items.ItemsCommonProxy;
 import am2.particles.AMParticle;
 import am2.particles.ParticleOrbitEntity;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
@@ -97,8 +99,8 @@ public class Flight implements ISpellComponent, IRitualInteraction{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_WHITE),
-				Items.nether_star,
-				Items.ghast_tear
+				ItemSetup.blackSteelIngot,
+				new ItemStack(ItemSetup.gemTourmaline,1,3)
 		};
 	}
 
@@ -117,7 +119,7 @@ public class Flight implements ISpellComponent, IRitualInteraction{
 		return new ItemStack[]{
 				new ItemStack(Items.feather),
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_AIR),
-				new ItemStack(BlocksCommonProxy.tarmaRoot)
+				new ItemStack(BlockSetup.flowers2, 1, 8)
 		};
 	}
 

@@ -7,6 +7,7 @@ import am2.api.spell.enums.Affinity;
 import am2.items.ItemsCommonProxy;
 import am2.particles.AMParticle;
 import am2.particles.ParticleFloatUpward;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.entity.Entity;
@@ -20,7 +21,7 @@ import java.util.EnumSet;
 import java.util.Random;
 
 public class HarvestPlants implements ISpellComponent{
-
+//TODO Check if this works on TFC crops already
 	@Override
 	public boolean applyEffectBlock(ItemStack stack, World world, int blockx, int blocky, int blockz, int blockFace, double impactX, double impactY, double impactZ, EntityLivingBase caster){
 		Block block = world.getBlock(blockx, blocky, blockz);
@@ -85,7 +86,7 @@ public class HarvestPlants implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_GREEN),
-				Items.shears
+				ItemSetup.shears
 		};
 	}
 

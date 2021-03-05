@@ -12,6 +12,8 @@ import am2.particles.ParticleFloatUpward;
 import am2.particles.ParticleOrbitEntity;
 import am2.playerextensions.ExtendedProperties;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
@@ -93,8 +95,8 @@ public class Absorption implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_CYAN),
-				Items.golden_apple,
-				BlocksCommonProxy.aum
+				ItemSetup.appleJack,
+				new ItemStack(BlockSetup.flowers, 1, 2)
 		};
 	}
 

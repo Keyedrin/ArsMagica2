@@ -5,6 +5,7 @@ import am2.api.spell.component.interfaces.ISpellComponent;
 import am2.api.spell.enums.Affinity;
 import am2.particles.AMParticle;
 import am2.particles.ParticleHoldPosition;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -24,7 +25,7 @@ public class MeltArmor implements ISpellComponent{
 	@Override
 	public Object[] getRecipeItems(){
 		return new Object[]{
-				new ItemStack(Blocks.sponge)
+				new ItemStack(ItemSetup.blueSteelBucketLava)
 		};
 	}
 

@@ -8,6 +8,7 @@ import am2.api.spell.enums.SpellModifiers;
 import am2.entities.EntitySpellProjectile;
 import am2.items.ItemsCommonProxy;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -57,8 +58,8 @@ public class Projectile implements ISpellShape{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_VINTEUMDUST),
-				Items.arrow,
-				Items.snowball
+				ItemSetup.copperJavelin,
+				ItemSetup.arrow
 		};
 	}
 

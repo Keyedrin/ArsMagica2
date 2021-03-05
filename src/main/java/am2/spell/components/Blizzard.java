@@ -6,6 +6,7 @@ import am2.api.spell.enums.SpellModifiers;
 import am2.entities.EntitySpellEffect;
 import am2.items.ItemsCommonProxy;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
@@ -23,8 +24,8 @@ public class Blizzard implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_ICE),
-				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_BLUETOPAZ),
-				Blocks.ice,
+				new ItemStack(ItemSetup.gemSapphire, 1, 4),
+				Blocks.snow,
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_ICE)
 		};
 	}

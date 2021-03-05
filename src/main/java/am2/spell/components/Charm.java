@@ -15,6 +15,8 @@ import am2.particles.ParticleFloatUpward;
 import am2.playerextensions.ExtendedProperties;
 import am2.spell.SpellUtils;
 import am2.utility.EntityUtilities;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLiving;
@@ -145,9 +147,8 @@ public class Charm implements ISpellComponent, IRitualInteraction{
 	@Override
 	public ItemStack[] getReagents(){
 		return new ItemStack[]{
-				new ItemStack(Items.wheat),
-				new ItemStack(Items.wheat_seeds),
-				new ItemStack(Items.carrot)
+				new ItemStack(ItemSetup.sugar),
+				new ItemStack(BlockSetup.flowers2)
 		};
 	}
 

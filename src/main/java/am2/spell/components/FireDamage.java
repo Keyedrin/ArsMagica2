@@ -17,6 +17,7 @@ import am2.particles.AMParticle;
 import am2.power.PowerNodeRegistry;
 import am2.spell.SpellHelper;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -134,7 +135,7 @@ public class FireDamage implements ISpellComponent, IRitualInteraction{
 	public ItemStack[] getReagents(){
 		return new ItemStack[]{
 				new ItemStack(ItemsCommonProxy.mobFocus),
-				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_SUNSTONE)
+				new ItemStack(ItemSetup.gemOpal)
 		};
 	}
 

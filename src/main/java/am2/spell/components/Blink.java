@@ -15,6 +15,7 @@ import am2.playerextensions.ExtendedProperties;
 import am2.spell.SpellUtils;
 import am2.utility.DimensionUtilities;
 import am2.utility.KeystoneUtilities;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -329,7 +330,9 @@ public class Blink implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_PURPLE),
-				Items.ender_pearl
+				Items.ender_pearl,
+				ItemSetup.compositeBow,
+				ItemSetup.brassCompass
 		};
 	}
 

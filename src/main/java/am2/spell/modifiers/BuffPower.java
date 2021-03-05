@@ -2,6 +2,8 @@ package am2.spell.modifiers;
 
 import am2.api.spell.component.interfaces.ISpellModifier;
 import am2.api.spell.enums.SpellModifiers;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
@@ -29,14 +31,14 @@ public class BuffPower implements ISpellModifier{
 	@Override
 	public Object[] getRecipeItems(){
 		return new Object[]{
-				Items.glass_bottle,
+				BlockSetup.bigDrum,
 				Items.redstone,
-				Items.glowstone_dust,
-				Items.ghast_tear,
+				ItemSetup.woadLeaves,
+				ItemSetup.gemEmerald,
+				ItemSetup.madderRoot,
 				Items.spider_eye,
-				Items.nether_wart,
-				Items.gunpowder,
-				Items.emerald
+				ItemSetup.weldRoot,
+				Items.gunpowder
 		};
 	}
 

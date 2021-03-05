@@ -13,6 +13,7 @@ import am2.buffs.BuffList;
 import am2.items.ItemsCommonProxy;
 import am2.particles.*;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
@@ -101,8 +102,8 @@ public class WateryGrave implements ISpellComponent, IRitualInteraction{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_BLUE),
-				Blocks.stone,
-				Items.leather_boots
+				ItemSetup.leadIngot,
+				ItemSetup.leatherBoots
 		};
 	}
 
@@ -119,7 +120,7 @@ public class WateryGrave implements ISpellComponent, IRitualInteraction{
 	@Override
 	public ItemStack[] getReagents(){
 		return new ItemStack[]{
-				new ItemStack(Blocks.stone)
+				new ItemStack(ItemSetup.paddle)
 		};
 	}
 

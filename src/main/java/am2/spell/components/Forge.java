@@ -8,6 +8,7 @@ import am2.items.ItemsCommonProxy;
 import am2.particles.AMParticle;
 import am2.particles.ParticleHoldPosition;
 import am2.utility.EntityUtilities;
+import com.dunk.tfc.BlockSetup;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -147,7 +148,7 @@ public class Forge implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_RED),
-				Blocks.furnace
+				BlockSetup.blastFurnace
 		};
 	}
 

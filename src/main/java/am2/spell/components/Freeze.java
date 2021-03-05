@@ -13,10 +13,13 @@ import am2.buffs.BuffList;
 import am2.items.ItemsCommonProxy;
 import am2.particles.AMParticle;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
@@ -28,15 +31,16 @@ public class Freeze implements ISpellComponent, IRitualInteraction{
 	@Override
 	public boolean applyEffectBlock(ItemStack stack, World world, int blockx, int blocky, int blockz, int blockFace, double impactX, double impactY, double impactZ, EntityLivingBase caster){
 		Block block = world.getBlock(blockx, blocky, blockz);
-		if (block == Blocks.water || block == Blocks.flowing_water) //flowing or still water
-		{
-			world.setBlock(blockx, blocky, blockz, Blocks.ice);
+		if (block == BlockSetup.freshWaterStationary){
+			world.setBlock(blockx, blocky, blockz, BlockSetup.ice); //TFC ice cannot be picked up without silktouch spell/enchant, no issues with moving water sources early game
 			return true;
+		}else if (block == BlockSetup.freshWater){
+			world.setBlock(blockx,blocky,blockz, Blocks.snow_layer); //allows for farming of snow in warmer climates
 		}else if (block == Blocks.lava){
-			world.setBlock(blockx, blocky, blockz, Blocks.obsidian);
+			world.setBlock(blockx, blocky, blockz, BlockSetup.stoneIgEx);
 			return true;
 		}else if (block == Blocks.flowing_lava){
-			world.setBlock(blockx, blocky, blockz, Blocks.cobblestone);
+			world.setBlock(blockx, blocky, blockz, BlockSetup.stoneIgExCobble);
 			return true;
 		}
 		return false;
@@ -127,7 +131,7 @@ public class Freeze implements ISpellComponent, IRitualInteraction{
 	@Override
 	public ItemStack[] getReagents(){
 		return new ItemStack[]{
-				new ItemStack(Blocks.ice)
+				new ItemStack(Items.snowball)
 		};
 	}
 

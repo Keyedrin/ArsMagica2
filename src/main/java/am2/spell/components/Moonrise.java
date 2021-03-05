@@ -3,6 +3,7 @@ package am2.spell.components;
 import am2.api.spell.component.interfaces.ISpellComponent;
 import am2.api.spell.enums.Affinity;
 import am2.items.ItemsCommonProxy;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
@@ -15,11 +16,13 @@ import java.util.Random;
 
 public class Moonrise implements ISpellComponent{
 
+	//TODO Make function on TFC timescale
+
 	@Override
 	public Object[] getRecipeItems(){
 		return new Object[]{
-				new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_MOONSTONE),
-				Items.clock,
+				new ItemStack(ItemSetup.gemOpal, 1, 4),
+				ItemSetup.brassClock,
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_PURE)
 		};
 	}

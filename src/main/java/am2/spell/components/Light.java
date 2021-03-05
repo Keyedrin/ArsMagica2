@@ -17,6 +17,7 @@ import am2.particles.AMParticle;
 import am2.power.PowerNodeRegistry;
 import am2.spell.SpellUtils;
 import am2.spell.modifiers.Colour;
+import com.dunk.tfc.BlockSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
@@ -169,9 +170,9 @@ public class Light implements ISpellComponent, IRitualInteraction{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_WHITE),
-				BlocksCommonProxy.cerublossom,
-				Blocks.torch,
-				BlocksCommonProxy.vinteumTorch
+				new ItemStack(BlockSetup.flowers2,1,1),
+				BlocksCommonProxy.vinteumTorch,
+				BlockSetup.oilLamp
 		};
 	}
 
