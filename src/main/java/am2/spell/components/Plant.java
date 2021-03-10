@@ -39,12 +39,14 @@ import java.util.Random;
 public class Plant implements ISpellComponent{
 
 	//TODO Make it work with TFC seeds
+	// crash with no seeds, seeds not taken from inventory, only makes wheat regardless of seed used
+
+	//this is apparently hacky and i shouldnt do it
 	/*public void IntEx() throws Exception{
 		ItemCustomSeeds ICS = new ItemCustomSeeds();
 		Field cropIdField = ICS.getClass().getDeclaredField("cropId");
 		cropIdField.setAccessible(true);
 		int cropId = cropIdField.getInt(ICS);
-
 	}*/
 	@Override
 	public boolean applyEffectBlock(ItemStack stack, World world, int blockx, int blocky, int blockz, int blockFace, double impactX, double impactY, double impactZ, EntityLivingBase caster){
