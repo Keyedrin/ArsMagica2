@@ -5,6 +5,7 @@ import am2.spell.SpellHelper;
 import am2.spell.SpellUtils;
 import am2.texture.ResourceManager;
 import am2.utility.InventoryUtilities;
+import com.dunk.tfc.Items.Tools.ItemCustomAxe;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -23,10 +24,10 @@ import net.minecraft.world.World;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ItemBoundAxe extends ItemAxe implements IBoundItem{
+public class ItemBoundAxe extends ItemCustomAxe implements IBoundItem{
 
 	public ItemBoundAxe(ToolMaterial par2ToolMaterial){
-		super(par2ToolMaterial);
+		super(par2ToolMaterial, 0);
 		this.setMaxDamage(0);
 	}
 

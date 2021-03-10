@@ -11,6 +11,8 @@ import net.minecraft.util.DamageSource;
 import net.minecraftforge.common.ISpecialArmor;
 import net.minecraftforge.common.MinecraftForge;
 
+//TODO split into AMArmor for Battlemage and AMClothing for Mage Robes
+
 public class AMArmor extends ItemArmor implements ISpecialArmor{
 
 	private static final int maxDamageArray[] = {

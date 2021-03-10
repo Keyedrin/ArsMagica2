@@ -41,7 +41,7 @@ public class FallingStar implements ISpellComponent{
 
 		List<EntityThrownRock> rocks = world.getEntitiesWithinAABB(EntityThrownRock.class, AxisAlignedBB.getBoundingBox(x - 10, y - 10, z - 10, x + 10, y + 10, z + 10));
 
-		int damageMultitplier = SpellUtils.instance.getModifiedInt_Mul(15, spellStack, caster, target, world, 0, SpellModifiers.DAMAGE);
+		int damageMultitplier = SpellUtils.instance.getModifiedInt_Mul(750, spellStack, caster, target, world, 0, SpellModifiers.DAMAGE);
 
 		for (EntityThrownRock rock : rocks){
 			if (rock.getIsShootingStar())

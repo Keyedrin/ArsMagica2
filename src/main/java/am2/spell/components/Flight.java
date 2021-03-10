@@ -56,7 +56,7 @@ public class Flight implements ISpellComponent, IRitualInteraction{
 
 	@Override
 	public float manaCost(EntityLivingBase caster){
-		return 80;
+		return 800;
 	}
 
 	@Override

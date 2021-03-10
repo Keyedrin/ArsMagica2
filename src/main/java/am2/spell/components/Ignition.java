@@ -7,17 +7,26 @@ import am2.api.spell.enums.SpellModifiers;
 import am2.items.ItemsCommonProxy;
 import am2.particles.AMParticle;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.Core.TFC_Core;
 import com.dunk.tfc.ItemSetup;
+import com.dunk.tfc.TileEntities.TEPottery;
+import com.dunk.tfc.api.TFCBlocks;
+import com.dunk.tfc.api.TFCItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFlower;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 
 import java.util.EnumSet;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 
 public class Ignition implements ISpellComponent{
@@ -39,9 +48,58 @@ public class Ignition implements ISpellComponent{
 			blockx--;
 			break;
 		}
+		//Adds compat for the TFC+ fire starting
+		if (!world.isRemote){
+			Block block = world.getBlock(blockx, blocky, blockz);
+			boolean surroundSolids = TFC_Core.isSurroundedSolid(world, blockx, blocky, blockz);
+			if ((block != TFCBlocks.charcoal || world.getBlockMetadata(blockx, blocky, blockz) <= 6) && block != Blocks.coal_block){
+				if (block == TFCBlocks.pottery && surroundSolids){
+					TEPottery te = (TEPottery)world.getTileEntity(blockx, blocky, blockz);
+					te.startPitFire();
+					return true;
+				}
+				if (blockFace == 1 && TFC_Core.isTopFaceSolid(world, blockx, blocky, blockz) && world.isAirBlock(blockx, blocky + 1, blockz) && block.getMaterial() != Material.wood && block.getMaterial() != Material.cloth) {
+					List list = world.getEntitiesWithinAABB(EntityItem.class, AxisAlignedBB.getBoundingBox((double)blockx, (double)(blocky + 1), (double)blockz, (double)(blockx + 1), (double)(blocky + 2), (double)(blockz + 1)));
+					int numsticks = 0;
+					if (list != null && !list.isEmpty()) {
+						Iterator iterator = list.iterator();
 
+						EntityItem entity;
+						while(iterator.hasNext()) {
+							entity = (EntityItem)iterator.next();
+							if (entity.getEntityItem().getItem() == TFCItems.stick) {
+								numsticks += entity.getEntityItem().stackSize;
+							}
+						}
+
+						if (numsticks >= 3) {
+							iterator = list.iterator();
+
+							while(true) {
+								do {
+									if (!iterator.hasNext()) {
+										world.setBlock(blockx, blocky + 1, blockz, TFCBlocks.firepit, 1, 2);
+										if (world.isRemote) {
+											world.markBlockForUpdate(blockx, blocky + 1, blockz);
+										}
+
+										return true;
+									}
+
+									entity = (EntityItem)iterator.next();
+								} while(entity.getEntityItem().getItem() != TFCItems.stick && entity.getEntityItem().getItem() != TFCItems.straw);
+
+								entity.setDead();
+							}
+						}
+					}
+				}
+			} else if (TFC_Core.isSurroundedStone(world, blockx, blocky, blockz) && surroundSolids) {
+				world.setBlock(blockx, blocky, blockz, TFCBlocks.forge, 1, 2);
+				return true;
+			}
+		}
 		Block block = world.getBlock(blockx, blocky, blockz);
-
 		if (world.isAirBlock(blockx, blocky, blockz) || block == Blocks.snow || block instanceof BlockFlower){
 			if (!world.isRemote) world.setBlock(blockx, blocky, blockz, Blocks.fire);
 			return true;

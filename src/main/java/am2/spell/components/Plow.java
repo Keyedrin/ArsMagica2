@@ -6,6 +6,14 @@ import am2.api.spell.component.interfaces.ISpellComponent;
 import am2.api.spell.enums.Affinity;
 import am2.items.ItemsCommonProxy;
 import am2.particles.AMParticle;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.Blocks.Flora.BlockFlower;
+import com.dunk.tfc.Blocks.Flora.BlockFlower2;
+import com.dunk.tfc.Core.Player.FoodStatsTFC;
+import com.dunk.tfc.Core.TFC_Core;
+import com.dunk.tfc.ItemSetup;
+import com.dunk.tfc.TileEntities.TEFarmland;
+import com.dunk.tfc.api.TFCBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -19,25 +27,79 @@ import java.util.Random;
 
 public class Plow implements ISpellComponent{
 
-	//TODO TFC dirt and grass to farmland
-
 	@Override
 	public boolean applyEffectBlock(ItemStack stack, World world, int blockx, int blocky, int blockz, int blockFace, double impactX, double impactY, double impactZ, EntityLivingBase caster){
 		Block block = world.getBlock(blockx, blocky, blockz);
 		Block blockAbove = world.getBlock(blockx, blocky + 1, blockz);
-		if ((block == Blocks.dirt || block == Blocks.grass)){
-			/*if (!(blockAbove instanceof BlockFlower)){
-				return false;
+
+		boolean isDirt = TFC_Core.isDirt(block);
+		boolean isFarmland = TFC_Core.isFarmland(block);
+		if (blockFace == 1 && blockAbove.isAir(world, blockx, blocky + 1, blockz) && (TFC_Core.isGrass(block) || isDirt || isFarmland)){
+			Block var10 = block != TFCBlocks.dirt && block != TFCBlocks.grass && block != TFCBlocks.dryGrass ? (block != TFCBlocks.dirt2 && block != TFCBlocks.grass2 && block != TFCBlocks.dryGrass2 ? null : TFCBlocks.dirt2) : TFCBlocks.dirt;
+			if (var10 != null){
+				int meta = world.getBlockMetadata(blockx, blocky, blockz);
+				TEFarmland te;
+				if (var10 == TFCBlocks.dirt){
+					world.playSoundEffect((double)((float)blockx + 0.5F), (double)((float)blocky + 0.5F), (double)((float)blockz + 0.5F), var10.stepSound.getStepResourcePath(), (var10.stepSound.getVolume() + 1.0F) / 2.0F, var10.stepSound.getPitch() * 0.8F);
+					if (world.isRemote){
+						return true;
+					}
+					world.setBlock(blockx, blocky, blockz, TFCBlocks.tilledSoil, meta, 2);
+					world.markBlockForUpdate(blockx, blocky, blockz);
+					if (isDirt){
+						te = (TEFarmland)world.getTileEntity(blockx, blocky, blockz);
+						te.nutrients[0] = 100;
+						te.nutrients[1] = 100;
+						te.nutrients[2] = 100;
+					}
+
+					return true;
+				}
+				if (var10 == TFCBlocks.dirt2) {
+					world.playSoundEffect((double)((float)blockx + 0.5F), (double)((float)blocky + 0.5F), (double)((float)blockz + 0.5F), var10.stepSound.getStepResourcePath(), (var10.stepSound.getVolume() + 1.0F) / 2.0F, var10.stepSound.getPitch() * 0.8F);
+					if (world.isRemote) {
+						return true;
+					}
+
+					world.setBlock(blockx, blocky, blockz, TFCBlocks.tilledSoil2, meta, 2);
+					world.markBlockForUpdate(blockx, blocky, blockz);
+					if (isDirt) {
+						te = (TEFarmland)world.getTileEntity(blockx, blocky, blockz);
+						te.nutrients[0] = 100;
+						te.nutrients[1] = 100;
+						te.nutrients[2] = 100;
+					}
+
+					return true;
+				}
+			} else if (isFarmland) {
+				TEFarmland te = (TEFarmland)world.getTileEntity(blockx, blocky, blockz);
+				if (te.fallow) {
+					if (world.isRemote) {
+						return true;
+					}
+
+					world.playSoundEffect((double)((float)blockx + 0.5F), (double)((float)blocky + 0.5F), (double)((float)blockz + 0.5F), block.stepSound.getStepResourcePath(), (block.stepSound.getVolume() + 1.0F) / 2.0F, block.stepSound.getPitch() * 0.8F);
+					te.tillFallowLand();
+				}
 			}
-			blockAbove.breakBlock(world, blockx, blocky+1, blockz, blockAbove, 0);
-			world.setBlock(blockx, blocky+1, blockz, Blocks.air);*/
-			if (!world.isRemote){
-				world.setBlock(blockx, blocky, blockz, Blocks.farmland);
-			}
-			return true;
+
+			return false;
+		} else {
+			return false;
 		}
-		return false;
 	}
+
+
+//		if ((block == Blocks.dirt || block == Blocks.grass)){
+//			if (!(blockAbove == BlockSetup.tallGrass || blockAbove == BlockSetup.flowers || blockAbove == BlockSetup.flowers2)){
+//				return false;
+//			}
+//			blockAbove.breakBlock(world, blockx, blocky+1, blockz, blockAbove, 0);
+//			world.setBlock(blockx, blocky+1, blockz, Blocks.air);
+//			if (!world.isRemote){
+//				world.setBlock(blockx, blocky, blockz, Blocks.farmland);
+//			}
 
 	@Override
 	public boolean applyEffectEntity(ItemStack stack, World world, EntityLivingBase caster, Entity target){
@@ -91,7 +153,8 @@ public class Plow implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_GREEN),
-				Items.stone_hoe
+				ItemSetup.copperHoe,
+				new ItemStack(ItemSetup.gemJade,1,2)
 		};
 	}
 

@@ -36,7 +36,7 @@ public class EntityEarthGuardian extends AM2Boss{
 	@Override
 	protected void applyEntityAttributes(){
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(140D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(7000D);
 	}
 
 	public boolean shouldRenderRock(){

@@ -35,7 +35,7 @@ public class LifeDrain implements ISpellComponent{
 		if (world.isRemote || !(target instanceof EntityLivingBase) || ((EntityLivingBase)target).getCreatureAttribute() == EnumCreatureAttribute.UNDEAD){
 			return true;
 		}
-		int magnitude = SpellUtils.instance.getModifiedInt_Add(4, stack, caster, target, world, 0, SpellModifiers.DAMAGE);
+		int magnitude = SpellUtils.instance.getModifiedInt_Add(200, stack, caster, target, world, 0, SpellModifiers.DAMAGE);
 
 		boolean success = SpellHelper.instance.attackTargetSpecial(stack, target, DamageSource.causeIndirectMagicDamage(caster, caster), SpellUtils.instance.modifyDamage(caster, magnitude));
 

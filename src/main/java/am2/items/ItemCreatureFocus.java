@@ -1,6 +1,8 @@
 package am2.items;
 
 import am2.texture.ResourceManager;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.init.Blocks;
@@ -18,11 +20,11 @@ public class ItemCreatureFocus extends ItemFilterFocus{
 				" P ",
 				"LFT",
 				" W ",
-				Character.valueOf('P'), Items.porkchop,
-				Character.valueOf('B'), Items.leather,
+				Character.valueOf('P'), BlockSetup.candle,
+				Character.valueOf('L'), ItemSetup.leather,
 				Character.valueOf('F'), ItemsCommonProxy.standardFocus,
 				Character.valueOf('T'), Items.feather,
-				Character.valueOf('W'), Blocks.wool,
+				Character.valueOf('W'), ItemSetup.wool,
 		};
 	}
 

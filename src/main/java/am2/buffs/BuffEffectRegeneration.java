@@ -31,7 +31,7 @@ public class BuffEffectRegeneration extends BuffEffect{
 
 		if (getDuration() != 0 && (getDuration() % ticks) == 0){
 			if (!world.isRemote){
-				entityliving.heal(1);
+				entityliving.heal(25);
 			}else{
 				AMParticle effect = (AMParticle)AMCore.instance.proxy.particleManager.spawn(world, "hr_sparkles_1",
 						entityliving.posX + world.rand.nextDouble() * entityliving.height - (entityliving.height / 2),

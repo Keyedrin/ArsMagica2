@@ -67,7 +67,7 @@ public class EntityWinterGuardian extends AM2Boss{
 	@Override
 	protected void applyEntityAttributes(){
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(290D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(14500D);
 	}
 
 	@Override

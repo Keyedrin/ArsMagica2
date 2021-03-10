@@ -134,29 +134,32 @@ public class TileEntityCraftingAltar extends TileEntityAMPower implements IMulti
 		primary = new MultiblockStructureDefinition("craftingAltar_alt");
 
 		Block[] augMatls = new Block[]{
+				BlockSetup.charcoal,
+				BlockSetup.stoneIgExSmooth,
+				BlockSetup.stoneMMSmooth,
+				BlockSetup.stoneIgInSmooth,
+				BlockSetup.stoneMMSmooth,
 				Blocks.glass,
-				Blocks.coal_block,
+				Blocks.stained_glass,
 				Blocks.redstone_block,
-				Blocks.iron_block,
-				Blocks.lapis_block,
-				Blocks.gold_block,
-				Blocks.diamond_block,
-				Blocks.emerald_block,
 				BlocksCommonProxy.AMOres,
-				BlocksCommonProxy.AMOres
+			//	BlocksCommonProxy.AMOres,
+			//	BlocksCommonProxy.AMOres
 		};
 
 		int[] augMetas = new int[]{
-				0, //glass
-				0, //coal
-				0, //redstone
-				0, //iron
-				0, //lapis
-				0, //gold
-				0, //diamond
-				0,  //emerald
-				BlocksCommonProxy.AMOres.META_MOONSTONE_BLOCK,
-				BlocksCommonProxy.AMOres.META_SUNSTONE_BLOCK
+				8, //glass = charcoal
+				1, //coal = basalt
+				0, //redstone = quartzite
+				0, //iron = granite
+				5, //lapis = marble
+				0, //gold = glass
+				Short.MAX_VALUE, //diamond = stained glass
+				0, //emerald = redstone
+				BlocksCommonProxy.AMOres.META_VINTEUM_BLOCK  //moonstone = vinteum
+
+			//	BlocksCommonProxy.AMOres.META_MOONSTONE_BLOCK,
+			//	BlocksCommonProxy.AMOres.META_SUNSTONE_BLOCK
 		};
 
 		lecternGroup_primary = new StructureGroup[4];
@@ -185,63 +188,63 @@ public class TileEntityCraftingAltar extends TileEntityAMPower implements IMulti
 		for (int i = 0; i < augMatls.length; ++i)
 			primary.addAllowedBlock(augMatl_primary[i], -1, 0, -2, augMatls[i], augMetas[i]);
 
-		primary.addAllowedBlock(-1, 0, -1, Blocks.stone_brick_stairs, 0);
-		primary.addAllowedBlock(-1, 0, 0, Blocks.stone_brick_stairs, 0);
-		primary.addAllowedBlock(-1, 0, 1, Blocks.stone_brick_stairs, 0);
+		primary.addAllowedBlock(-1, 0, -1, BlockSetup.woodHoriz, 0);
+		primary.addAllowedBlock(-1, 0, 0, BlockSetup.woodHoriz, 0);
+		primary.addAllowedBlock(-1, 0, 1, BlockSetup.woodHoriz, 0);
 
 		for (int i = 0; i < augMatls.length; ++i)
 			primary.addAllowedBlock(augMatl_primary[i], -1, 0, 2, augMatls[i], augMetas[i]);
 
-		primary.addAllowedBlock(0, 0, -2, Blocks.stone_brick_stairs, 0);
-		primary.addAllowedBlock(0, 0, -1, Blocks.stonebrick, 0);
+		primary.addAllowedBlock(0, 0, -2, BlockSetup.woodHoriz, 8);
+		primary.addAllowedBlock(0, 0, -1, BlockSetup.planks, 0);
 		primary.addAllowedBlock(0, 0, 0, BlocksCommonProxy.craftingAltar);
-		primary.addAllowedBlock(0, 0, 1, Blocks.stonebrick, 0);
-		primary.addAllowedBlock(0, 0, 2, Blocks.stone_brick_stairs, 0);
+		primary.addAllowedBlock(0, 0, 1, BlockSetup.planks, 0);
+		primary.addAllowedBlock(0, 0, 2, BlockSetup.woodHoriz, 8);
 
 		for (int i = 0; i < augMatls.length; ++i)
 			primary.addAllowedBlock(augMatl_primary[i], 1, 0, -2, augMatls[i], augMetas[i]);
 
-		primary.addAllowedBlock(1, 0, -1, Blocks.stone_brick_stairs, 0);
-		primary.addAllowedBlock(1, 0, 0, Blocks.stone_brick_stairs, 0);
-		primary.addAllowedBlock(1, 0, 1, Blocks.stone_brick_stairs, 0);
+		primary.addAllowedBlock(1, 0, -1, BlockSetup.woodHoriz, 0);
+		primary.addAllowedBlock(1, 0, 0, BlockSetup.woodHoriz, 0);
+		primary.addAllowedBlock(1, 0, 1, BlockSetup.woodHoriz, 0);
 
 		for (int i = 0; i < augMatls.length; ++i)
 			primary.addAllowedBlock(augMatl_primary[i], 1, 0, 2, augMatls[i], augMetas[i]);
 
 		//row 1
-		primary.addAllowedBlock(1, -1, -2, Blocks.stonebrick, 0);
-		primary.addAllowedBlock(1, -1, -1, Blocks.stone_brick_stairs, 0);
-		primary.addAllowedBlock(1, -1, 1, Blocks.stone_brick_stairs, 0);
-		primary.addAllowedBlock(1, -1, 2, Blocks.stonebrick, 0);
+		primary.addAllowedBlock(1, -1, -2, BlockSetup.woodVert, 0);
+		primary.addAllowedBlock(1, -1, -1, BlockSetup.fence, 0);
+		primary.addAllowedBlock(1, -1, 1, BlockSetup.fence, 0);
+		primary.addAllowedBlock(1, -1, 2, BlockSetup.woodVert, 0);
 
 		primary.addAllowedBlock(0, -1, -2, BlocksCommonProxy.magicWall, 0);
 		primary.addAllowedBlock(0, -1, 2, BlocksCommonProxy.magicWall, 0);
 
-		primary.addAllowedBlock(-1, -1, -2, Blocks.stonebrick, 0);
-		primary.addAllowedBlock(-1, -1, -1, Blocks.stone_brick_stairs, 0);
-		primary.addAllowedBlock(-1, -1, 1, Blocks.stone_brick_stairs, 0);
-		primary.addAllowedBlock(-1, -1, 2, Blocks.stonebrick, 0);
+		primary.addAllowedBlock(-1, -1, -2, BlockSetup.woodVert, 0);
+		primary.addAllowedBlock(-1, -1, -1, BlockSetup.fence, 0);
+		primary.addAllowedBlock(-1, -1, 1, BlockSetup.fence, 0);
+		primary.addAllowedBlock(-1, -1, 2, BlockSetup.woodVert, 0);
 
 		//row 2
-		primary.addAllowedBlock(1, -2, -2, Blocks.stonebrick, 0);
-		primary.addAllowedBlock(1, -2, 2, Blocks.stonebrick, 0);
+		primary.addAllowedBlock(1, -2, -2, BlockSetup.woodVert, 0);
+		primary.addAllowedBlock(1, -2, 2, BlockSetup.woodVert, 0);
 
 		primary.addAllowedBlock(0, -2, -2, BlocksCommonProxy.magicWall, 0);
 		primary.addAllowedBlock(0, -2, 2, BlocksCommonProxy.magicWall, 0);
 
-		primary.addAllowedBlock(-1, -2, -2, Blocks.stonebrick, 0);
-		primary.addAllowedBlock(-1, -2, 2, Blocks.stonebrick, 0);
+		primary.addAllowedBlock(-1, -2, -2, BlockSetup.woodVert, 0);
+		primary.addAllowedBlock(-1, -2, 2, BlockSetup.woodVert, 0);
 
 
 		//row 3
-		primary.addAllowedBlock(1, -3, -2, Blocks.stonebrick, 0);
-		primary.addAllowedBlock(1, -3, 2, Blocks.stonebrick, 0);
+		primary.addAllowedBlock(1, -3, -2, BlockSetup.woodVert, 0);
+		primary.addAllowedBlock(1, -3, 2, BlockSetup.woodVert, 0);
 
 		primary.addAllowedBlock(0, -3, -2, BlocksCommonProxy.magicWall, 0);
 		primary.addAllowedBlock(0, -3, 2, BlocksCommonProxy.magicWall, 0);
 
-		primary.addAllowedBlock(-1, -3, -2, Blocks.stonebrick, 0);
-		primary.addAllowedBlock(-1, -3, 2, Blocks.stonebrick, 0);
+		primary.addAllowedBlock(-1, -3, -2, BlockSetup.woodVert, 0);
+		primary.addAllowedBlock(-1, -3, 2, BlockSetup.woodVert, 0);
 
 		//row 4
 		for (int i = -2; i <= 2; ++i){
@@ -250,7 +253,7 @@ public class TileEntityCraftingAltar extends TileEntityAMPower implements IMulti
 					for (int n = 0; n < augMatls.length; ++n)
 						primary.addAllowedBlock(augMatl_primary[n], i, -4, j, augMatls[n], augMetas[n]);
 				}else{
-					primary.addAllowedBlock(i, -4, j, Blocks.stonebrick, 0);
+					primary.addAllowedBlock(i, -4, j, BlockSetup.planks, 0);
 				}
 			}
 		}

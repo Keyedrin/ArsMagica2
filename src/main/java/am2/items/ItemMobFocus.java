@@ -19,11 +19,12 @@ public class ItemMobFocus extends ItemFilterFocus{
 	@Override
 	public Object[] getRecipeItems(){
 		return new Object[]{
-				"S",
+				"R",
 				"F",
-				"S",
-				Character.valueOf('S'), Items.iron_sword,
-				Character.valueOf('F'), ItemsCommonProxy.standardFocus
+				"E",
+				Character.valueOf('R'), Items.rotten_flesh,
+				Character.valueOf('F'), ItemsCommonProxy.standardFocus,
+				Character.valueOf('E'), Items.spider_eye
 		};
 	}
 

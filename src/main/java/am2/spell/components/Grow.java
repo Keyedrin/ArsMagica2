@@ -13,7 +13,10 @@ import am2.particles.ParticleFloatUpward;
 import am2.particles.ParticleOrbitPoint;
 import am2.utility.DummyEntityPlayer;
 import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.Core.TFC_Core;
 import com.dunk.tfc.ItemSetup;
+import com.dunk.tfc.TileEntities.TECrop;
+import com.dunk.tfc.TileEntities.TEFarmland;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
@@ -42,7 +45,7 @@ public class Grow implements ISpellComponent{
 	public boolean applyEffectBlock(ItemStack stack, World world, int blockx, int blocky, int blockz, int blockFace, double impactX, double impactY, double impactZ, EntityLivingBase caster){
 
 		Block block = world.getBlock(blockx, blocky, blockz);
-
+/*
 		BonemealEvent event = new BonemealEvent(DummyEntityPlayer.fromEntityLiving(caster), world, block, blockx, blocky, blockz);
 		if (MinecraftForge.EVENT_BUS.post(event)){
 			return false;
@@ -50,7 +53,7 @@ public class Grow implements ISpellComponent{
 		if (event.getResult() == Result.ALLOW){
 			return true;
 		}
-/*
+
 		//EoD: Spawn AM2 flowers with 3% chance. This has to be the first one in the list to override all others
 		if (world.rand.nextInt(100) < 3 && block.isNormalCube() &&
 				(world.getBlock(blockx, blocky + 1, blockz).isAir(null, 0, 0, 0) || world.getBlock(blockx, blocky + 1, blockz) == Blocks.tallgrass)){
@@ -88,17 +91,17 @@ public class Grow implements ISpellComponent{
 			}
 		}
 */
-		//TODO Make this work on all the grass variants
+		//TODO Make this work on all the grass variants and flowers
 		//EoD: If there is already tallgrass present, let's grow it further 20% of the time.
-		if (block == BlockSetup.grass){
-			if (Blocks.tallgrass.canBlockStay(world, blockx, blocky + 1, blockz)){
+		if (block == BlockSetup.tallGrass){
+			if (BlockSetup.tallGrass.canBlockStay(world, blockx, blocky + 1, blockz)){
 				if (!world.isRemote && world.rand.nextInt(10) < 2){
-					world.setBlock(blockx, blocky, blockz, Blocks.tallgrass, 1, 2);
+					world.setBlock(blockx, blocky, blockz, BlockSetup.tallGrass, 1, 2);
 				}
 				return true;
 			}
 		}
-
+/*
 		//EoD: If there is already deadbush present, let's revitalize it 20% of the time.
 		//     This works only on podzol in vanilla MC.
 		if (block == Blocks.deadbush){
@@ -109,8 +112,10 @@ public class Grow implements ISpellComponent{
 				return true;
 			}
 		}
-		//TODO Make function like TFC fertilizer, rename spell effect to Fertilize
 
+ */
+
+/*
 		// EoD: Apply vanilla bonemeal effect to growables 30% of the time. This is the generic grow section.
 		//      See ItemDye.applyBonemeal().
 		if (block instanceof IGrowable){
@@ -126,8 +131,23 @@ public class Grow implements ISpellComponent{
 				return true;
 			}
 		}
+	*/
+		if (!world.isRemote) {
+			TEFarmland tef;
+			if (TFC_Core.isFarmland(world.getBlock(blockx, blocky, blockz))) {
+				tef = (TEFarmland)world.getTileEntity(blockx, blocky, blockz);
+				if (tef.nutrients[3] != TEFarmland.getSoilMax()) {
+					return tef.fertilize(stack, false);
+				}
+			} else if (world.getTileEntity(blockx, blocky, blockz) instanceof TECrop && TFC_Core.isFarmland(world.getBlock(blockx, blocky - 1, blockz))) {
+				tef = (TEFarmland)world.getTileEntity(blockx, blocky - 1, blockz);
+				if (tef.nutrients[3] != TEFarmland.getSoilMax()) {
+					return tef.fertilize(stack, false);
+				}
+			}
+		}
 
-		return true;
+		return false;
 	}
 
 	@Override

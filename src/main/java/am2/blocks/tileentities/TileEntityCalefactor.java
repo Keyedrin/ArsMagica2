@@ -28,6 +28,8 @@ import net.minecraftforge.common.util.Constants;
 
 import java.util.Random;
 
+//TODO Make function as a heat source
+
 public class TileEntityCalefactor extends TileEntityAMPower implements IInventory, ISidedInventory, IKeystoneLockable{
 
 	private ItemStack calefactorItemStacks[];

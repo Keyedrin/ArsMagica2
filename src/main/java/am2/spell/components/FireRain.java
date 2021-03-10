@@ -49,7 +49,7 @@ public class FireRain implements ISpellComponent{
 
 		if (!world.isRemote){
 			int radius = SpellUtils.instance.getModifiedInt_Add(2, stack, caster, target, world, 0, SpellModifiers.RADIUS) / 2 + 1;
-			double damage = SpellUtils.instance.getModifiedDouble_Mul(1, stack, caster, target, world, 0, SpellModifiers.DAMAGE);
+			double damage = SpellUtils.instance.getModifiedDouble_Mul(50, stack, caster, target, world, 0, SpellModifiers.DAMAGE);
 			int duration = SpellUtils.instance.getModifiedInt_Mul(100, stack, caster, target, world, 0, SpellModifiers.DURATION);
 
 			EntitySpellEffect fire = new EntitySpellEffect(world);

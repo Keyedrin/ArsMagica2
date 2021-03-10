@@ -27,7 +27,7 @@ import java.util.EnumSet;
 import java.util.Random;
 
 public class Forge implements ISpellComponent{
-
+//TODO increase heat sources, turn wood to charcoal and ash, animals drop cooked meat
 	@Override
 	public boolean applyEffectBlock(ItemStack stack, World world, int blockx, int blocky, int blockz, int blockFace, double impactX, double impactY, double impactZ, EntityLivingBase caster){
 		if (!CanApplyFurnaceToBlockAtCoords(caster, world, blockx, blocky, blockz)) return false;
@@ -92,9 +92,9 @@ public class Forge implements ISpellComponent{
 			return false;
 		}
 
-		if (block == Blocks.ice){
+		if (block == BlockSetup.ice){
 			if (!world.isRemote){
-				world.setBlock(x, y, z, Blocks.water);
+				world.setBlock(x, y, z, BlockSetup.freshWaterStationary);
 			}
 			return true;
 		}

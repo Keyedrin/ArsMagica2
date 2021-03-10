@@ -5,6 +5,7 @@ import am2.spell.SpellHelper;
 import am2.spell.SpellUtils;
 import am2.texture.ResourceManager;
 import am2.utility.InventoryUtilities;
+import com.dunk.tfc.Items.Tools.ItemCustomSword;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -16,10 +17,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
 
-public class ItemBoundSword extends ItemSword implements IBoundItem{
+public class ItemBoundSword extends ItemCustomSword implements IBoundItem{
 
 	public ItemBoundSword(ToolMaterial par2ToolMaterial){
-		super(par2ToolMaterial);
+		super(par2ToolMaterial, 0);
 		this.setMaxDamage(0);
 	}
 

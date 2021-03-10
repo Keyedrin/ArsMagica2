@@ -25,7 +25,7 @@ import java.util.EnumSet;
 import java.util.Random;
 
 public class Heal implements ISpellComponent{
-
+//TODO Add upgraded heal that instantly mends bones and stops bleeding. Restoration
 	@Override
 	public boolean applyEffectBlock(ItemStack stack, World world, int blockx, int blocky, int blockz, int blockFace, double impactX, double impactY, double impactZ, EntityLivingBase caster){
 		return false;
@@ -35,11 +35,11 @@ public class Heal implements ISpellComponent{
 	public boolean applyEffectEntity(ItemStack stack, World world, EntityLivingBase caster, Entity target){
 		if (target instanceof EntityLivingBase){
 			if (((EntityLivingBase)target).getCreatureAttribute() == EnumCreatureAttribute.UNDEAD){
-				int healing = SpellUtils.instance.getModifiedInt_Mul(10, stack, caster, target, world, 0, SpellModifiers.HEALING);
+				int healing = SpellUtils.instance.getModifiedInt_Mul(250, stack, caster, target, world, 0, SpellModifiers.HEALING);
 				target.setFire(2);
 				return SpellHelper.instance.attackTargetSpecial(stack, target, DamageSources.causeEntityHolyDamage(caster), healing * (0.5f + 2 * AffinityData.For(caster).getAffinityDepth(Affinity.LIFE)));
 			}else{
-				int healing = SpellUtils.instance.getModifiedInt_Mul(2, stack, caster, target, world, 0, SpellModifiers.HEALING);
+				int healing = SpellUtils.instance.getModifiedInt_Mul(100, stack, caster, target, world, 0, SpellModifiers.HEALING);
 				if (ExtendedProperties.For((EntityLivingBase)target).getCanHeal()){
 					((EntityLivingBase)target).heal(healing);
 					ExtendedProperties.For((EntityLivingBase)target).setHealCooldown(60);

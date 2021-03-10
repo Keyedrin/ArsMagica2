@@ -33,7 +33,7 @@ public class Drown implements ISpellComponent{
 		if (!(target instanceof EntityLivingBase) || target instanceof EntityIronGolem) return false;
 		if (((EntityLivingBase)target).getCreatureAttribute() == EnumCreatureAttribute.UNDEAD)
 			return false;
-		float baseDamage = 12;
+		float baseDamage = 600;
 		double damage = SpellUtils.instance.getModifiedDouble_Add(baseDamage, stack, caster, target, world, 0, SpellModifiers.DAMAGE);
 		return SpellHelper.instance.attackTargetSpecial(stack, target, DamageSources.causeEntityDrownDamage(caster), SpellUtils.instance.modifyDamage(caster, (float)damage));
 	}

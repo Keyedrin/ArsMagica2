@@ -117,7 +117,7 @@
     </component>
     <component id="Ignition">
       <name>Ignition</name>
-      <desc>Many magi see fire as a damaging, destructive force, and that can be true.  But how many hear fire and imagine lighting a stove, campfire or candle?  </desc>
+      <desc>Many magi see fire as a damaging, destructive force, and that can be true.  But how many hear fire and imagine lighting a forge, campfire or candle?  </desc>
       <modifiedBy>DURATION</modifiedBy>
     </component>
     <component id="Forge">
@@ -298,7 +298,7 @@
     </component>
     <component id="Plow">
       <name>Plow</name>
-      <desc>You can cause the earth to churn at your command, creating deep furrows ideal for planting.</desc>
+      <desc>You can cause the earth to churn at your command, creating deep furrows ideal for planting, without sacrificing hunger.</desc>
       <modifiedBy></modifiedBy>
     </component>
     <component id="CreateWater">
@@ -307,8 +307,8 @@
       <modifiedBy></modifiedBy>
     </component>
     <component id="Grow">
-      <name>Grow</name>
-      <desc>Pouring energy into plants, equal to months of talking to them, will cause them to grow more rapidly.</desc>
+      <name>Fertilize</name>
+      <desc>Pouring energy into the soil, equal to months of fallowing, will replenish the nutrients for your farmland.</desc>
       <modifiedBy></modifiedBy>
     </component>
     <component id="BanishRain">
@@ -384,7 +384,7 @@
     </component>
     <component id="Daylight">
       <name>Daylight</name>
-      <desc>You have gained the ability to control time.  This spell will cause the time to move to Dawn.</desc>
+      <desc>You have gained the ability to control time.  This spell will cause the time to pass to Dawn.</desc>
       <modifiedBy></modifiedBy>
     </component>
     <component id="FallingStar">
@@ -409,7 +409,7 @@
     </component>
     <component id="Moonrise">
       <name>Moonrise</name>
-      <desc>You have gained the ability to control time.  This spell will cause the time to move to Dusk.</desc>
+      <desc>You have gained the ability to control time.  This spell will cause the time to pass to Dusk.</desc>
       <modifiedBy></modifiedBy>
     </component>
     <component id="Drought">
@@ -424,7 +424,7 @@
     </component>
     <component id="Accelerate">
       <name>Accelerate</name>
-      <desc>This spell causes targeted blocks to tick faster.  Note that it does not make tile entities any quicker.  This spell is best used in a shape like beam, wall, or zone, due to its need to be cast multiple times to have any real effect.</desc>
+      <desc>NOTE: I am almost positive this affects nothing in TFC; it is being left for testing purposes only. This spell causes targeted blocks to tick faster.  Note that it does not make tile entities any quicker.  This spell is best used in a shape like beam, wall, or zone, due to its need to be cast multiple times to have any real effect.</desc>
       <modifiedBy></modifiedBy>
     </component>
     <component id="Drown">
@@ -613,7 +613,7 @@
       </subitem>
       <subitem id="itemOre@1">
         <name>Arcane Compound</name>
-        <desc>A combination of materials from multiple worlds, the Arcane Compound forms the base resource needed to get Arcane Ash.</desc>
+        <desc>A combination of multiple materials, the Arcane Compound forms the base resource needed to get Arcane Ash.</desc>
         <relatedEntries>itemOre@2,calefactor</relatedEntries>
       </subitem>
       <subitem id="itemOre@2">
@@ -1357,45 +1357,39 @@
       <desc>
 			Harnessing the forces of creation, the crafting altar allows mages to work miracles of magic.  This is where you will create all of your spells in Ars Magica.  The structure is upgradeable by 2 main groups, the caps and the main material.  Both groups individually increase the available power of the altar and allow it to make more powerful spells.  The main blocks, in order of power, are as follows:
 			!l
-			Wood Planks (+1 Effect)
+			Most Wood Logs and Planks (+1 Effect)
 			!l
-			Stone Brick (+1 Effect)
+			Most Large Stone Bricks (+1 Effect)
 			!l
-			Sandstone (+1 Effect)
+            Ash and Willow Logs and Planks (+2 Effects)
+            !l
+			Clay Bricks (+3 Effects)
 			!l
-			Bricks (+2 Effects)
-			!l
-			Witchwood (+2 Effects)
-			!l
-			Nether Bricks (+3 Effects)
-			!l
-			Nether Quartz (+3 Effects)
+			Large Marble Bricks (+4 Effects)
 			!l
 			!l
 			For the caps (grand total of 5 in the structure), the progression is as follows:
 			!l
-			Glass (+1 Effect)
+			Charcoal Blocks (+1 Effect)
 			!l
-			Coal Blocks (+2 Effects)
+			Smooth Basalt (+2 Effects)
 			!l
-			Redstone Blocks (+3 Effects)
+            Smooth Quartzite (+3 Effects)
 			!l
-			Iron Blocks (+4 Effects)
+			Smooth Granite (+4 Effects)
 			!l
-			Lapis Blocks (+5 Effects)
+			Smooth Marble (+5 Effects)
 			!l
-			Gold Blocks (+6 Effects)
+			Glass (+6 Effects)
 			!l
-			Diamond Blocks (+7 Effects)
+			Stained Glass (+7 Effects)
 			!l
-			Emerald Blocks (+8 Effects)
+			Redstone Blocks (+8 Effects)
 			!l
-			Moonstone Blocks (+9 Effects)
-			!l
-			Sunstone Blocks (+10 Effects)
+			Vinteum Blocks (+9 Effects)
 			!l
 			!l
-			These stack cumulatively, so for example wood planks with glass caps would equal a maximum of 2 effects, whereas stone bricks with redstone caps would have a maximum of 4 effects in a spell.  The maximum number of effects you can currently have on a spell is 13.
+			These stack cumulatively, so for example a common wooden structure with charcoal caps would equal a maximum of 2 effects, whereas common stone bricks with redstone caps would have a maximum of 9 effects in a spell.  The maximum number of effects you can currently have on a spell is 13.
 			</desc>
       <relatedEntries></relatedEntries>
     </structure>
@@ -1809,7 +1803,7 @@
 				fooled by the decoy. !l Recommended level: 10 !p The
 				water guardian can be summoned by creating a redstone
 				inlay circle in any biome that is predominantly water.
-				Then, while raining, throw a boat and a bucket of water
+				Then, while raining, throw a boat and a wooden bucket of water
 				into the circle as homage to the many ships lost at sea.
 			</desc>
       <relatedEntries></relatedEntries>
@@ -1938,6 +1932,8 @@
 				refinement process progresses and eventually completes.
 				A flashing red ring means there is insufficient Etherium to
 				continue, and the process has been paused.
+				Also, the essence refiner can be used to combine two lower-tier
+				gemstones into one of the next-tier gemstone. 
 			</desc>
       <relatedEntries>essence</relatedEntries>
     </block>

@@ -1,13 +1,17 @@
 package am2.worldgen;
 
 import am2.blocks.BlocksCommonProxy;
+import com.dunk.tfc.BlockSetup;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 
 import java.util.Random;
+
+//TODO figure out why its not spawning
 
 public class AM2PoolGen{
 	public void generate(World world, Random rand, int x, int y, int z){
@@ -48,10 +52,9 @@ public class AM2PoolGen{
 
 		int radius = 2;
 
-		Block requiredBlock = world.getBiomeGenForCoords(x, z).topBlock;
-		Block alternateBlock = world.getBiomeGenForCoords(x, z).fillerBlock;
+		Material getmat = world.getBlock(x, y, z).getMaterial();
 
-		if (requiredBlock == null || alternateBlock == null) return false;
+		if (getmat != Material.grass || getmat != Material.ground || getmat != Material.rock || getmat != Material.sand) return false;
 
 		for (int i = -radius; i < radius; ++i){
 			for (int k = -radius; k < radius; ++k){
@@ -60,7 +63,6 @@ public class AM2PoolGen{
 
 				if (blockBelow == null || block == null) return false;
 				if (!blockBelow.isOpaqueCube()) return false;
-				if (block != requiredBlock && block != alternateBlock) return false;
 
 				Block blockAbove = world.getBlock(x, y + 1, z);
 				if (blockAbove == null) continue;

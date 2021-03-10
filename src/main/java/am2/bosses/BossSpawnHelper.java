@@ -4,6 +4,8 @@ import am2.blocks.BlocksCommonProxy;
 import am2.blocks.tileentities.TileEntityLectern;
 import am2.entities.EntityDryad;
 import am2.items.ItemsCommonProxy;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -39,7 +41,7 @@ public class BossSpawnHelper{
 			dryadsKilled = 0;
 		}
 	}
-
+//TODO No villagers, something else needs done
 	public void onVillagerChildKilled(EntityVillager villager){
 		int x = (int)Math.floor(villager.posX);
 		int y = (int)Math.floor(villager.posY);
@@ -190,7 +192,7 @@ public class BossSpawnHelper{
 			if (item.isDead) continue;
 			if (item.getEntityItem().getItem() == Items.boat)
 				hasBoat = true;
-			else if (item.getEntityItem().getItem() == Items.water_bucket)
+			else if (item.getEntityItem().getItem() == ItemSetup.woodenBucketWater)
 				hasBucket = true;
 		}
 
@@ -225,28 +227,28 @@ public class BossSpawnHelper{
 		boolean hasStructure = false;
 		TileEntityLectern lectern = null;
 		//+z check
-		if (world.getBlock(x - 1, y, z + 2) == Blocks.bookshelf && world.getBlock(x - 1, y + 1, z + 2) == Blocks.bookshelf && world.getBlock(x - 1, y + 2, z + 2) == Blocks.bookshelf && world.getBlock(x + 1, y, z + 2) == Blocks.bookshelf && world.getBlock(x + 1, y + 1, z + 2) == Blocks.bookshelf && world.getBlock(x + 1, y + 2, z + 2) == Blocks.bookshelf){
+		if (world.getBlock(x - 1, y, z + 2) == BlockSetup.bookshelf && world.getBlock(x - 1, y + 1, z + 2) == BlockSetup.bookshelf && world.getBlock(x - 1, y + 2, z + 2) == BlockSetup.bookshelf && world.getBlock(x + 1, y, z + 2) == BlockSetup.bookshelf && world.getBlock(x + 1, y + 1, z + 2) == BlockSetup.bookshelf && world.getBlock(x + 1, y + 2, z + 2) == BlockSetup.bookshelf){
 			if (world.getBlock(x, y, z + 2) == BlocksCommonProxy.blockLectern){
 				lectern = (TileEntityLectern)world.getTileEntity(x, y, z + 2);
 				hasStructure = true;
 			}
 		}
 		//-z check
-		if (world.getBlock(x - 1, y, z - 2) == Blocks.bookshelf && world.getBlock(x - 1, y + 1, z - 2) == Blocks.bookshelf && world.getBlock(x - 1, y + 2, z - 2) == Blocks.bookshelf && world.getBlock(x + 1, y, z - 2) == Blocks.bookshelf && world.getBlock(x + 1, y + 1, z - 2) == Blocks.bookshelf && world.getBlock(x + 1, y + 2, z - 2) == Blocks.bookshelf){
+		if (world.getBlock(x - 1, y, z - 2) == BlockSetup.bookshelf && world.getBlock(x - 1, y + 1, z - 2) == BlockSetup.bookshelf && world.getBlock(x - 1, y + 2, z - 2) == BlockSetup.bookshelf && world.getBlock(x + 1, y, z - 2) == BlockSetup.bookshelf && world.getBlock(x + 1, y + 1, z - 2) == BlockSetup.bookshelf && world.getBlock(x + 1, y + 2, z - 2) == BlockSetup.bookshelf){
 			if (world.getBlock(x, y, z - 2) == BlocksCommonProxy.blockLectern){
 				lectern = (TileEntityLectern)world.getTileEntity(x, y, z - 2);
 				hasStructure = true;
 			}
 		}
 		//+x check
-		if (world.getBlock(x + 2, y, z - 1) == Blocks.bookshelf && world.getBlock(x + 2, y + 1, z - 1) == Blocks.bookshelf && world.getBlock(x + 2, y + 2, z - 1) == Blocks.bookshelf && world.getBlock(x + 2, y, z + 1) == Blocks.bookshelf && world.getBlock(x + 2, y + 1, z + 1) == Blocks.bookshelf && world.getBlock(x + 2, y + 2, z + 1) == Blocks.bookshelf){
+		if (world.getBlock(x + 2, y, z - 1) == BlockSetup.bookshelf && world.getBlock(x + 2, y + 1, z - 1) == BlockSetup.bookshelf && world.getBlock(x + 2, y + 2, z - 1) == BlockSetup.bookshelf && world.getBlock(x + 2, y, z + 1) == BlockSetup.bookshelf && world.getBlock(x + 2, y + 1, z + 1) == BlockSetup.bookshelf && world.getBlock(x + 2, y + 2, z + 1) == BlockSetup.bookshelf){
 			if (world.getBlock(x + 2, y, z) == BlocksCommonProxy.blockLectern){
 				lectern = (TileEntityLectern)world.getTileEntity(x + 2, y, z);
 				hasStructure = true;
 			}
 		}
 		//-x check
-		if (world.getBlock(x - 2, y, z - 1) == Blocks.bookshelf && world.getBlock(x - 2, y + 1, z - 1) == Blocks.bookshelf && world.getBlock(x - 2, y + 2, z - 1) == Blocks.bookshelf && world.getBlock(x - 2, y, z + 1) == Blocks.bookshelf && world.getBlock(x - 2, y + 1, z + 1) == Blocks.bookshelf && world.getBlock(x - 2, y + 2, z + 1) == Blocks.bookshelf){
+		if (world.getBlock(x - 2, y, z - 1) == BlockSetup.bookshelf && world.getBlock(x - 2, y + 1, z - 1) == BlockSetup.bookshelf && world.getBlock(x - 2, y + 2, z - 1) == BlockSetup.bookshelf && world.getBlock(x - 2, y, z + 1) == BlockSetup.bookshelf && world.getBlock(x - 2, y + 1, z + 1) == BlockSetup.bookshelf && world.getBlock(x - 2, y + 2, z + 1) == BlockSetup.bookshelf){
 			if (world.getBlock(x - 2, y, z) == BlocksCommonProxy.blockLectern){
 				lectern = (TileEntityLectern)world.getTileEntity(x - 2, y, z);
 				hasStructure = true;
@@ -264,29 +266,29 @@ public class BossSpawnHelper{
 	private void checkForEarthGuardianSpawn(World world, int x, int y, int z){
 		List<EntityItem> itemsInRange = world.getEntitiesWithinAABB(EntityItem.class, AxisAlignedBB.getBoundingBox(x - 1, y - 1, z - 1, x + 1, y + 1, z + 1));
 		if (itemsInRange.size() != 3) return;
-		boolean hasEmerald = false;
-		boolean hasTopaz = false;
-		boolean hasChimerite = false;
+		boolean hasOre = false;
+		boolean hasCobble = false;
+//		boolean hasChimerite = false;
 		boolean hasStructure = false;
 
 		for (EntityItem item : itemsInRange){
 			if (item.isDead) continue;
-			if (item.getEntityItem().getItem() == Items.emerald)
-				hasEmerald = true;
-			else if (item.getEntityItem().getItem() == ItemsCommonProxy.itemOre && item.getEntityItem().getItemDamage() == ItemsCommonProxy.itemOre.META_BLUETOPAZ)
-				hasTopaz = true;
-			else if (item.getEntityItem().getItem() == ItemsCommonProxy.itemOre && item.getEntityItem().getItemDamage() == ItemsCommonProxy.itemOre.META_CHIMERITE)
-				hasChimerite = true;
+			if (item.getEntityItem().getItem() == ItemSetup.oreChunk && item.getEntityItem().getItemDamage() == -1)
+				hasOre = true;
+			else if (item.getEntityItem().getItem() == ItemSetup.looseRock && item.getEntityItem().getItemDamage() == -1)
+				hasCobble = true;
+//			else if (item.getEntityItem().getItem() == ItemsCommonProxy.itemOre && item.getEntityItem().getItemDamage() == ItemsCommonProxy.itemOre.META_CHIMERITE)
+//				hasChimerite = true;
 		}
 
-		hasStructure = world.getBlock(x, y - 1, z) == Blocks.stonebrick && world.getBlockMetadata(x, y - 1, z) == 3;
+		hasStructure = world.getBlock(x, y - 1, z) == BlockSetup.stoneIgExBrick && world.getBlockMetadata(x, y - 1, z) == -1;
 
 		if (!hasStructure) return;
 
 		for (int i = -1; i <= 1; ++i){
 			for (int j = -1; j <= 1; ++j){
 				if (i == 0 && j == 0) continue;
-				hasStructure &= world.getBlock(x + i, y - 1, z + j) == Blocks.obsidian;
+				hasStructure &= world.getBlock(x + i, y - 1, z + j) == BlockSetup.stoneIgExSmooth && world.getBlockMetadata(x + i, y - 1, z + j) == -1;
 			}
 		}
 
@@ -295,7 +297,7 @@ public class BossSpawnHelper{
 		hasStructure &= world.getBlock(x, y, z - 2) == BlocksCommonProxy.vinteumTorch;
 		hasStructure &= world.getBlock(x, y, z + 2) == BlocksCommonProxy.vinteumTorch;
 
-		if (!world.isRemote && hasEmerald && hasTopaz && hasChimerite && hasStructure){
+		if (!world.isRemote && hasOre && hasCobble && hasStructure){
 			for (EntityItem item : itemsInRange){
 				item.setDead();
 			}
@@ -305,7 +307,7 @@ public class BossSpawnHelper{
 			queuedBosses.put(guardian, world);
 		}
 	}
-
+//TODO Spawn in desert, require lava
 	private void checkForFireGuardianSpawn(EntityItem item, World world, int x, int y, int z){
 		if (item.getEntityItem().getItem() != ItemsCommonProxy.essence || item.getEntityItem().getItemDamage() != ItemsCommonProxy.essence.META_WATER)
 			return;
@@ -402,7 +404,7 @@ public class BossSpawnHelper{
 
 		world.thunderingStrength = 1.0f;
 	}
-
+//TODO spawn in overworld, need idea
 	public void checkForEnderGuardianSpawn(World world, int x, int y, int z){
 		if (world.provider.dimensionId != 1) return;
 

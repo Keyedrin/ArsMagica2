@@ -33,7 +33,7 @@ public class BuffEffectCharmed extends BuffEffect{
 		EntityUtilities.setOwner(entityliving, charmer);
 		EntityUtilities.setSummonDuration(entityliving, -1);
 	}
-
+//TODO Increase familiarity slightly once a day
 	@Override
 	public void stopEffect(EntityLivingBase entityliving){
 		if (entityliving instanceof EntityCreature){

@@ -2,8 +2,11 @@ package am2.blocks;
 
 import am2.items.ItemsCommonProxy;
 import am2.items.RecipesArsMagica;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 import java.util.HashMap;
@@ -31,90 +34,90 @@ public class RecipesEssenceRefiner extends RecipesArsMagica{
 				},
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_ARCANE));
 		//earth essence
+		//TODO Any stone type in any slot
 		AddRecipe(new ItemStack[]{
-						new ItemStack(Blocks.dirt),
-						new ItemStack(Blocks.stone),
+						new ItemStack(ItemSetup.brick),
+						new ItemStack(ItemSetup.brick),
 						new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
-						new ItemStack(Blocks.stone),
-						new ItemStack(Blocks.obsidian)
+						new ItemStack(ItemSetup.brick),
+						new ItemStack(ItemSetup.brick)
 				},
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_EARTH));
 		//air essence
 		AddRecipe(new ItemStack[]{
 						new ItemStack(Items.feather),
-						new ItemStack(BlocksCommonProxy.tarmaRoot),
+						new ItemStack(BlockSetup.flowers),
 						new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
-						new ItemStack(BlocksCommonProxy.tarmaRoot),
+						new ItemStack(BlockSetup.flowers),
 						new ItemStack(Items.feather)
 				},
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_AIR));
 		AddRecipe(new ItemStack[]{
-						new ItemStack(BlocksCommonProxy.tarmaRoot),
+						new ItemStack(BlockSetup.flowers),
 						new ItemStack(Items.feather),
 						new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
 						new ItemStack(Items.feather),
-						new ItemStack(BlocksCommonProxy.tarmaRoot)
+						new ItemStack(BlockSetup.flowers)
 				},
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_AIR));
 		//fire essence
 		AddRecipe(new ItemStack[]{
-						new ItemStack(Items.coal),
-						new ItemStack(Items.blaze_powder),
+						new ItemStack(ItemSetup.coal,1,1),
+						new ItemStack(ItemSetup.coal),
 						new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
-						new ItemStack(Items.blaze_powder),
-						new ItemStack(Items.coal)
+						new ItemStack(ItemSetup.coal),
+						new ItemStack(ItemSetup.coal,1,1)
 				},
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_FIRE));
 		AddRecipe(new ItemStack[]{
-						new ItemStack(Items.blaze_powder),
-						new ItemStack(Items.coal),
+						new ItemStack(ItemSetup.coal),
+						new ItemStack(ItemSetup.coal,1,1),
 						new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
-						new ItemStack(Items.coal),
-						new ItemStack(Items.blaze_powder)
+						new ItemStack(ItemSetup.coal,1,1),
+						new ItemStack(ItemSetup.coal)
+				},
+				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_FIRE));
+		AddRecipe(new ItemStack[]{
+						new ItemStack(BlockSetup.peat),
+						new ItemStack(ItemSetup.coal,1,1),
+						new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
+						new ItemStack(ItemSetup.coal,1,1),
+						new ItemStack(BlockSetup.peat)
+				},
+				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_FIRE));
+		AddRecipe(new ItemStack[]{
+						new ItemStack(ItemSetup.coal,1,1),
+						new ItemStack(BlockSetup.peat),
+						new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
+						new ItemStack(BlockSetup.peat),
+						new ItemStack(ItemSetup.coal,1,1)
 				},
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_FIRE));
 		//water essence
 		AddRecipe(new ItemStack[]{
-						new ItemStack(BlocksCommonProxy.wakebloom),
-						new ItemStack(Items.water_bucket),
+						new ItemStack(BlockSetup.lilyPad),
+						new ItemStack(ItemSetup.waterBottle),
 						new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
-						new ItemStack(Items.water_bucket),
-						new ItemStack(BlocksCommonProxy.wakebloom)
+						new ItemStack(ItemSetup.waterBottle),
+						new ItemStack(BlockSetup.lilyPad)
 				},
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_WATER));
 
 		AddRecipe(new ItemStack[]{
-						new ItemStack(Items.water_bucket),
-						new ItemStack(BlocksCommonProxy.wakebloom),
+						new ItemStack(ItemSetup.waterBottle),
+						new ItemStack(BlockSetup.lilyPad),
 						new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
-						new ItemStack(BlocksCommonProxy.wakebloom),
-						new ItemStack(Items.water_bucket)
-				},
-				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_WATER));
-
-		AddRecipe(new ItemStack[]{
-						new ItemStack(Items.potionitem, 1, 0),
-						new ItemStack(BlocksCommonProxy.wakebloom),
-						new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
-						new ItemStack(BlocksCommonProxy.wakebloom),
-						new ItemStack(Items.potionitem, 1, 0)
-				},
-				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_WATER));
-
-		AddRecipe(new ItemStack[]{
-						new ItemStack(BlocksCommonProxy.wakebloom),
-						new ItemStack(Items.potionitem, 1, 0),
-						new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
-						new ItemStack(Items.potionitem, 1, 0),
-						new ItemStack(BlocksCommonProxy.wakebloom)
+						new ItemStack(BlockSetup.lilyPad),
+						new ItemStack(ItemSetup.waterBottle)
 				},
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_WATER));
 		//ice essence
+		//TODO replace ice with something else as ice is not easily harvested
 		AddRecipe(new ItemStack[]{
 						new ItemStack(Blocks.snow),
-						new ItemStack(Blocks.ice),
+						new ItemStack(BlockSetup.ice),
 						new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
-						new ItemStack(Blocks.ice),
+						new ItemStack(BlockSetup.ice),
 						new ItemStack(Blocks.snow)
 				},
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_ICE));
@@ -129,44 +132,45 @@ public class RecipesEssenceRefiner extends RecipesArsMagica{
 		//lightning essence
 		AddRecipe(new ItemStack[]{
 						new ItemStack(Items.redstone),
-						new ItemStack(Items.glowstone_dust),
+						new ItemStack(ItemSetup.magneticNeedle),
 						new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
-						new ItemStack(Items.glowstone_dust),
+						new ItemStack(ItemSetup.magneticNeedle),
 						new ItemStack(Items.redstone),
 				},
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_LIGHTNING));
 		AddRecipe(new ItemStack[]{
-						new ItemStack(Items.glowstone_dust),
+						new ItemStack(ItemSetup.magneticNeedle),
 						new ItemStack(Items.redstone),
 						new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
 						new ItemStack(Items.redstone),
-						new ItemStack(Items.glowstone_dust),
+						new ItemStack(ItemSetup.magneticNeedle),
 				},
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_LIGHTNING));
 		//plant essence
+		//TODO Any combo of flowers or flowers2
 		AddRecipe(new ItemStack[]{
-						new ItemStack(Blocks.leaves, 1, -1),
-						new ItemStack(Blocks.waterlily),
+						new ItemStack(BlockSetup.leaves, 1, -1),
+						new ItemStack(BlockSetup.flowers2, 1,-1),
 						new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
-						new ItemStack(Blocks.cactus),
-						new ItemStack(Blocks.vine)
+						new ItemStack(BlockSetup.flowers,1,-1),
+						new ItemStack(BlockSetup.tallGrass,1,-1)
 				},
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_NATURE));
 		//life essence
 		AddRecipe(new ItemStack[]{
-						new ItemStack(Items.egg),
-						new ItemStack(Items.golden_apple, 1, 0),
+						new ItemStack(ItemSetup.sterileBandage),
+						new ItemStack(ItemSetup.woodenBucketHoney),
 						new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
-						new ItemStack(Items.golden_apple, 1, 0),
-						new ItemStack(Items.egg)
+						new ItemStack(ItemSetup.woodenBucketHoney),
+						new ItemStack(ItemSetup.sterileBandage)
 				},
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_LIFE));
 		AddRecipe(new ItemStack[]{
-						new ItemStack(Items.golden_apple),
-						new ItemStack(Items.egg, 1, 0),
+						new ItemStack(ItemSetup.woodenBucketHoney),
+						new ItemStack(ItemSetup.sterileBandage),
 						new ItemStack(ItemsCommonProxy.itemOre, 1, ItemsCommonProxy.itemOre.META_ARCANEASH),
-						new ItemStack(Items.egg, 1, 0),
-						new ItemStack(Items.golden_apple)
+						new ItemStack(ItemSetup.sterileBandage),
+						new ItemStack(ItemSetup.woodenBucketHoney),
 				},
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_LIFE));
 		//ender essence
@@ -209,7 +213,7 @@ public class RecipesEssenceRefiner extends RecipesArsMagica{
 		AddRecipe(new ItemStack[]{
 						new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_HIGH_CORE),
 						new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_LIFE),
-						new ItemStack(Items.diamond),
+						new ItemStack(ItemSetup.gemDiamond,1,-1),
 						new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_ENDER),
 						new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_BASE_CORE)
 				},
@@ -218,7 +222,7 @@ public class RecipesEssenceRefiner extends RecipesArsMagica{
 		AddRecipe(new ItemStack[]{
 						new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_HIGH_CORE),
 						new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_ENDER),
-						new ItemStack(Items.diamond),
+						new ItemStack(ItemSetup.gemDiamond,1,2),
 						new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_LIFE),
 						new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_BASE_CORE)
 				},
@@ -227,18 +231,80 @@ public class RecipesEssenceRefiner extends RecipesArsMagica{
 		//deficit crystal
 		AddRecipe(new ItemStack[]{
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_ENDER),
-				new ItemStack(Items.magma_cream),
-				new ItemStack(Items.emerald),
-				new ItemStack(Blocks.obsidian),
+				new ItemStack(Items.gunpowder),
+				new ItemStack(ItemSetup.gemEmerald,1,2),
+				new ItemStack(ItemSetup.leadIngot),
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_ENDER),
 		}, new ItemStack(ItemsCommonProxy.deficitCrystal));
 
 		AddRecipe(new ItemStack[]{
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_ENDER),
-				new ItemStack(Blocks.obsidian),
-				new ItemStack(Items.emerald),
-				new ItemStack(Items.magma_cream),
+				new ItemStack(ItemSetup.leadIngot),
+				new ItemStack(ItemSetup.gemEmerald),
+				new ItemStack(Items.gunpowder),
 				new ItemStack(ItemsCommonProxy.essence, 1, ItemsCommonProxy.essence.META_ENDER),
 		}, new ItemStack(ItemsCommonProxy.deficitCrystal));
+		//gem upgrading
+
+		//TODO 2 chipped, 3 vinteum = 1 flawed
+		// 2 flawed, 2 vinteum, 1 arcane ash = 1 normal
+		// 2 normal, 2 arcane ash, 1 pure vinteum = 1 flawless
+		// 2 flawless, 3 pure vinteum = 1 exquisite
+
+		//agate
+		AddRecipe(new ItemStack[]{
+				new ItemStack(ItemSetup.gemAgate,1,0),
+				new ItemStack(ItemsCommonProxy.itemOre,1,ItemsCommonProxy.itemOre.META_VINTEUMDUST),
+				new ItemStack(ItemsCommonProxy.itemOre,1,ItemsCommonProxy.itemOre.META_VINTEUMDUST),
+				new ItemStack(ItemsCommonProxy.itemOre,1,ItemsCommonProxy.itemOre.META_VINTEUMDUST),
+				new ItemStack(ItemSetup.gemAgate,1,0),
+		}, new ItemStack(ItemSetup.gemAgate,1,1));
+
+		AddRecipe(new ItemStack[]{
+				new ItemStack(ItemSetup.gemAgate,1,1),
+				new ItemStack(ItemsCommonProxy.itemOre,1,ItemsCommonProxy.itemOre.META_VINTEUMDUST),
+				new ItemStack(ItemsCommonProxy.itemOre,1,ItemsCommonProxy.itemOre.META_ARCANEASH),
+				new ItemStack(ItemsCommonProxy.itemOre,1,ItemsCommonProxy.itemOre.META_VINTEUMDUST),
+				new ItemStack(ItemSetup.gemAgate,1,1),
+		}, new ItemStack(ItemSetup.gemAgate,1,2));
+
+		AddRecipe(new ItemStack[]{
+				new ItemStack(ItemSetup.gemAgate,1,2),
+				new ItemStack(ItemsCommonProxy.itemOre,1,ItemsCommonProxy.itemOre.META_ARCANEASH),
+				new ItemStack(ItemsCommonProxy.itemOre,1,ItemsCommonProxy.itemOre.META_PURIFIEDVINTEUM),
+				new ItemStack(ItemsCommonProxy.itemOre,1,ItemsCommonProxy.itemOre.META_ARCANEASH),
+				new ItemStack(ItemSetup.gemAgate,1,2),
+		}, new ItemStack(ItemSetup.gemAgate,1,3));
+
+		AddRecipe(new ItemStack[]{
+				new ItemStack(ItemSetup.gemAgate,1,3),
+				new ItemStack(ItemsCommonProxy.itemOre,1,ItemsCommonProxy.itemOre.META_PURIFIEDVINTEUM),
+				new ItemStack(ItemsCommonProxy.itemOre,1,ItemsCommonProxy.itemOre.META_PURIFIEDVINTEUM),
+				new ItemStack(ItemsCommonProxy.itemOre,1,ItemsCommonProxy.itemOre.META_PURIFIEDVINTEUM),
+				new ItemStack(ItemSetup.gemAgate,1,3),
+		}, new ItemStack(ItemSetup.gemAgate,1,4));
+		//amethyst
+
+		//beryl
+
+		//diamond
+
+		//emerald
+
+		//garnet
+
+		//jade
+
+		//jasper
+
+		//opal
+
+		//ruby
+
+		//sapphire
+
+		//topaz
+
+		//tourmaline
 	}
 }

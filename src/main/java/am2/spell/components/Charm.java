@@ -147,7 +147,7 @@ public class Charm implements ISpellComponent, IRitualInteraction{
 	@Override
 	public ItemStack[] getReagents(){
 		return new ItemStack[]{
-				new ItemStack(ItemSetup.sugar),
+				new ItemStack(ItemSetup.caneJuice),
 				new ItemStack(BlockSetup.flowers2)
 		};
 	}

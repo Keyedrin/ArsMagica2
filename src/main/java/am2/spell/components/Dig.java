@@ -13,6 +13,8 @@ import am2.playerextensions.ExtendedProperties;
 import am2.spell.SpellUtils;
 import am2.utility.DummyEntityPlayer;
 import am2.utility.KeystoneUtilities;
+import com.dunk.tfc.BlockSetup;
+import com.dunk.tfc.ItemSetup;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -31,7 +33,7 @@ import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.Random;
 
-//TODO find way to rebalance otherwise disable spell
+//TODO move further down in the utility tree
 
 public class Dig implements ISpellComponent{
 
@@ -147,8 +149,7 @@ public class Dig implements ISpellComponent{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_ORANGE),
-				Items.iron_shovel,
-				Items.iron_pickaxe
+				ItemSetup.blackSteelPick
 		};
 	}
 

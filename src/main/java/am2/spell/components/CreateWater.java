@@ -18,7 +18,7 @@ import java.util.EnumSet;
 import java.util.Random;
 
 public class CreateWater implements ISpellComponent{
-
+	//TODO Split into Create Seawater and Create Fresh Water, add spell to create water in barrel/vessel before this
 	@Override
 	public boolean applyEffectBlock(ItemStack stack, World world, int blockx, int blocky, int blockz, int blockFace, double impactX, double impactY, double impactZ, EntityLivingBase caster){
 

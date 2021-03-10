@@ -32,7 +32,7 @@ public class EntityAirGuardian extends AM2Boss{
 	@Override
 	protected void applyEntityAttributes(){
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(220D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(11000D);
 	}
 
 	@Override

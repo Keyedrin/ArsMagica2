@@ -10,6 +10,7 @@ import am2.blocks.BlocksCommonProxy;
 import am2.buffs.BuffList;
 import am2.multiblock.IMultiblockStructureController;
 import am2.power.PowerNodeRegistry;
+import com.dunk.tfc.BlockSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
@@ -58,61 +59,53 @@ public class TileEntityKeystoneRecepticle extends TileEntityAMPower implements I
 		//row 0
 		primary.addAllowedBlock(0, 0, 0, BlocksCommonProxy.keystoneRecepticle, 0);
 		primary.addAllowedBlock(0, 0, 0, BlocksCommonProxy.keystoneRecepticle, 2);
-		primary.addAllowedBlock(0, 0, -1, Blocks.stone_brick_stairs, 2);
-		primary.addAllowedBlock(0, 0, 1, Blocks.stone_brick_stairs, 3);
-		primary.addAllowedBlock(0, 0, -1, Blocks.stonebrick);
-		primary.addAllowedBlock(0, 0, 1, Blocks.stonebrick);
+		primary.addAllowedBlock(0, 0, -1, BlockSetup.stoneMMLargeBrick, 5);
+		primary.addAllowedBlock(0, 0, 1, BlockSetup.stoneMMLargeBrick, 5);
 		//row 1
-		primary.addAllowedBlock(0, -1, -1, Blocks.stone_brick_stairs, 7);
-		primary.addAllowedBlock(0, -1, -2, Blocks.stone_brick_stairs, 2);
-		primary.addAllowedBlock(0, -1, 1, Blocks.stone_brick_stairs, 6);
-		primary.addAllowedBlock(0, -1, 2, Blocks.stone_brick_stairs, 3);
-		primary.addAllowedBlock(0, -1, 2, Blocks.stonebrick);
-		primary.addAllowedBlock(0, -1, -2, Blocks.stonebrick);
+		primary.addAllowedBlock(0, -1, -1, BlockSetup.wallLargeBrickMM, 5);
+		primary.addAllowedBlock(0, -1, 1, BlockSetup.wallLargeBrickMM, 5);
+		primary.addAllowedBlock(0, -1, 2, BlockSetup.stoneMMLargeBrick, 5);
+		primary.addAllowedBlock(0, -1, -2, BlockSetup.stoneMMLargeBrick, 5);
 		//row 2
-		primary.addAllowedBlock(0, -2, -2, Blocks.stonebrick, 0);
-		primary.addAllowedBlock(0, -2, 2, Blocks.stonebrick, 0);
+		primary.addAllowedBlock(0, -2, -2, BlockSetup.stoneMMLargeBrick, 5);
+		primary.addAllowedBlock(0, -2, 2, BlockSetup.stoneMMLargeBrick, 5);
 		//row 3
-		primary.addAllowedBlock(0, -3, -2, Blocks.stonebrick, 0);
-		primary.addAllowedBlock(0, -3, 2, Blocks.stonebrick, 0);
-		primary.addAllowedBlock(0, -3, -1, Blocks.stone_brick_stairs, 3);
-		primary.addAllowedBlock(0, -3, 1, Blocks.stone_brick_stairs, 2);
+		primary.addAllowedBlock(0, -3, -2, BlockSetup.stoneMMLargeBrick, 5);
+		primary.addAllowedBlock(0, -3, 2, BlockSetup.stoneMMLargeBrick, 5);
+		primary.addAllowedBlock(0, -3, -1, BlockSetup.wallLargeBrickMM, 5);
+		primary.addAllowedBlock(0, -3, 1, BlockSetup.wallLargeBrickMM, 5);
 		//row 4
-		primary.addAllowedBlock(0, -4, -2, Blocks.stonebrick, 0);
-		primary.addAllowedBlock(0, -4, -1, Blocks.stonebrick, 0);
-		primary.addAllowedBlock(0, -4, 0, Blocks.stonebrick, 3);
-		primary.addAllowedBlock(0, -4, 1, Blocks.stonebrick, 0);
-		primary.addAllowedBlock(0, -4, 2, Blocks.stonebrick, 0);
+		primary.addAllowedBlock(0, -4, -2, BlockSetup.stoneMMLargeBrick, 5);
+		primary.addAllowedBlock(0, -4, -1, BlockSetup.stoneMMLargeBrick, 5);
+		primary.addAllowedBlock(0, -4, 0, BlockSetup.stoneMMSmooth, 5);
+		primary.addAllowedBlock(0, -4, 1, BlockSetup.stoneMMLargeBrick, 5);
+		primary.addAllowedBlock(0, -4, 2, BlockSetup.stoneMMLargeBrick, 5);
 
 		//secondary
 		//row 0
 		secondary.addAllowedBlock(0, 0, 0, BlocksCommonProxy.keystoneRecepticle, 1);
 		secondary.addAllowedBlock(0, 0, 0, BlocksCommonProxy.keystoneRecepticle, 3);
-		secondary.addAllowedBlock(-1, 0, 0, Blocks.stone_brick_stairs, 0);
-		secondary.addAllowedBlock(1, 0, 0, Blocks.stone_brick_stairs, 1);
-		secondary.addAllowedBlock(-1, 0, 0, Blocks.stonebrick);
-		secondary.addAllowedBlock(1, 0, 0, Blocks.stonebrick);
+		secondary.addAllowedBlock(-1, 0, 0, BlockSetup.stoneMMLargeBrick, 5);
+		secondary.addAllowedBlock(1, 0, 0, BlockSetup.stoneMMLargeBrick, 5);
 		//row 1
-		secondary.addAllowedBlock(-1, -1, 0, Blocks.stone_brick_stairs, 5);
-		secondary.addAllowedBlock(-2, -1, 0, Blocks.stone_brick_stairs, 0);
-		secondary.addAllowedBlock(1, -1, 0, Blocks.stone_brick_stairs, 4);
-		secondary.addAllowedBlock(2, -1, 0, Blocks.stone_brick_stairs, 1);
-		secondary.addAllowedBlock(2, -1, 0, Blocks.stonebrick);
-		secondary.addAllowedBlock(-2, -1, 0, Blocks.stonebrick);
+		secondary.addAllowedBlock(-1, -1, 0, BlockSetup.wallLargeBrickMM, 5);
+		secondary.addAllowedBlock(1, -1, 0, BlockSetup.wallLargeBrickMM, 5);
+		secondary.addAllowedBlock(2, -1, 0, BlockSetup.stoneMMLargeBrick, 5);
+		secondary.addAllowedBlock(-2, -1, 0, BlockSetup.stoneMMLargeBrick, 5);
 		//row 2
-		secondary.addAllowedBlock(-2, -2, 0, Blocks.stonebrick, 0);
-		secondary.addAllowedBlock(2, -2, 0, Blocks.stonebrick, 0);
+		secondary.addAllowedBlock(-2, -2, 0, BlockSetup.stoneMMLargeBrick, 5);
+		secondary.addAllowedBlock(2, -2, 0, BlockSetup.stoneMMLargeBrick, 5);
 		//row 3
-		secondary.addAllowedBlock(-2, -3, 0, Blocks.stonebrick, 0);
-		secondary.addAllowedBlock(2, -3, 0, Blocks.stonebrick, 0);
-		secondary.addAllowedBlock(-1, -3, 0, Blocks.stone_brick_stairs, 1);
-		secondary.addAllowedBlock(1, -3, 0, Blocks.stone_brick_stairs, 0);
+		secondary.addAllowedBlock(-2, -3, 0, BlockSetup.stoneMMLargeBrick, 5);
+		secondary.addAllowedBlock(2, -3, 0, BlockSetup.stoneMMLargeBrick, 5);
+		secondary.addAllowedBlock(-1, -3, 0, BlockSetup.wallLargeBrickMM, 5);
+		secondary.addAllowedBlock(1, -3, 0, BlockSetup.wallLargeBrickMM, 5);
 		//row 4
-		secondary.addAllowedBlock(-2, -4, 0, Blocks.stonebrick, 0);
-		secondary.addAllowedBlock(-1, -4, 0, Blocks.stonebrick, 0);
-		secondary.addAllowedBlock(0, -4, 0, Blocks.stonebrick, 3);
-		secondary.addAllowedBlock(1, -4, 0, Blocks.stonebrick, 0);
-		secondary.addAllowedBlock(2, -4, 0, Blocks.stonebrick, 0);
+		secondary.addAllowedBlock(-2, -4, 0, BlockSetup.stoneMMLargeBrick, 5);
+		secondary.addAllowedBlock(-1, -4, 0, BlockSetup.stoneMMLargeBrick, 5);
+		secondary.addAllowedBlock(0, -4, 0, BlockSetup.stoneMMSmooth, 5);
+		secondary.addAllowedBlock(1, -4, 0, BlockSetup.stoneMMLargeBrick, 5);
+		secondary.addAllowedBlock(2, -4, 0, BlockSetup.stoneMMLargeBrick, 5);
 	}
 
 	public void onPlaced(){

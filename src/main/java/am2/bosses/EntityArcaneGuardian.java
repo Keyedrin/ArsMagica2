@@ -36,7 +36,7 @@ public class EntityArcaneGuardian extends AM2Boss{
 	@Override
 	protected void applyEntityAttributes(){
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(115D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(5750D);
 	}
 
 	@Override

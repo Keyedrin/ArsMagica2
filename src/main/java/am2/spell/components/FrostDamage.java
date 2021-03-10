@@ -32,7 +32,7 @@ public class FrostDamage implements ISpellComponent{
 	@Override
 	public boolean applyEffectEntity(ItemStack stack, World world, EntityLivingBase caster, Entity target){
 		if (!(target instanceof EntityLivingBase)) return false;
-		float baseDamage = 10;
+		float baseDamage = 500;
 		double damage = SpellUtils.instance.getModifiedDouble_Add(baseDamage, stack, caster, target, world, 0, SpellModifiers.DAMAGE);
 		((EntityLivingBase)target).addPotionEffect(new BuffEffectFrostSlowed(10, SpellUtils.instance.countModifiers(SpellModifiers.BUFF_POWER, stack, 0)));
 		return SpellHelper.instance.attackTargetSpecial(stack, target, DamageSources.causeEntityFrostDamage(caster), SpellUtils.instance.modifyDamage(caster, (float)damage));

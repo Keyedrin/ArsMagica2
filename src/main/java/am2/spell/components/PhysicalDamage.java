@@ -31,7 +31,7 @@ public class PhysicalDamage implements ISpellComponent{
 	@Override
 	public boolean applyEffectEntity(ItemStack stack, World world, EntityLivingBase caster, Entity target){
 		if (!(target instanceof EntityLivingBase)) return false;
-		float baseDamage = 8;
+		float baseDamage = 400;
 		double damage = SpellUtils.instance.getModifiedDouble_Add(baseDamage, stack, caster, target, world, 0, SpellModifiers.DAMAGE);
 		return SpellHelper.instance.attackTargetSpecial(stack, target, DamageSources.causeEntityPhysicalDamage(caster), SpellUtils.instance.modifyDamage(caster, (float)damage));
 	}

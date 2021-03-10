@@ -23,7 +23,7 @@ import java.util.EnumSet;
 import java.util.Random;
 
 public class Regeneration implements ISpellComponent{
-
+//TODO Add upgraded regen that slowly mends bones and bleeding. Mending
 	@Override
 	public boolean applyEffectBlock(ItemStack stack, World world, int blockx, int blocky, int blockz, int blockFace, double impactX, double impactY, double impactZ, EntityLivingBase caster){
 		return false;

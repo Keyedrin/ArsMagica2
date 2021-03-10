@@ -3,18 +3,18 @@ package am2.spell.components;
 import am2.api.spell.component.interfaces.ISpellComponent;
 import am2.api.spell.enums.Affinity;
 import am2.items.ItemsCommonProxy;
+import com.dunk.tfc.Core.TFC_Time;
 import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 
 import java.util.EnumSet;
 import java.util.Random;
-
-//TODO make function on the TFC timescale
 
 public class Daylight implements ISpellComponent{
 
@@ -36,9 +36,11 @@ public class Daylight implements ISpellComponent{
 		if (world.isDaytime())
 			return false;
 		if (!world.isRemote){
-			long curTime = ((WorldServer)world).getWorldTime();
-			int day = (int)Math.ceil((curTime / 24000));
-			((WorldServer)world).setWorldTime(day * 24000);
+			long currentTime = TFC_Time.getTotalTicks();
+			int day = (int)(currentTime + (24000L - currentTime % 24000L));
+			for(int j = 0; j < MinecraftServer.getServer().worldServers.length; ++j) {
+				MinecraftServer.getServer().worldServers[j].setWorldTime((long)day);
+			}
 		}
 		return true;
 	}

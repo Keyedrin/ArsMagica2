@@ -5,6 +5,7 @@ import am2.spell.SpellHelper;
 import am2.spell.SpellUtils;
 import am2.texture.ResourceManager;
 import am2.utility.InventoryUtilities;
+import com.dunk.tfc.Items.Tools.ItemCustomShovel;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -23,7 +24,7 @@ import net.minecraft.world.World;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ItemBoundShovel extends ItemSpade implements IBoundItem{
+public class ItemBoundShovel extends ItemCustomShovel implements IBoundItem{
 
 	public ItemBoundShovel(ToolMaterial par2ToolMaterial){
 		super(par2ToolMaterial);

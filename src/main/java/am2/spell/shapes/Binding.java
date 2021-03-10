@@ -12,10 +12,13 @@ import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public class Binding implements ISpellShape{
+
+	//TODO add bound mace, scythe. Maybe hammer, knife, chisel
 
 	@Override
 	public int getID(){
@@ -68,11 +71,8 @@ public class Binding implements ISpellShape{
 	public Object[] getRecipeItems(){
 		return new Object[]{
 				ItemSetup.gemJasper,
-				ItemSetup.copperSword,
-				ItemSetup.copperShovel,
-				ItemSetup.copperHoe,
-				ItemSetup.copperAxe,
-				ItemSetup.copperPick,
+				ItemSetup.goldIngot,
+				ItemSetup.silverIngot,
 				new ItemStack(ItemsCommonProxy.bindingCatalyst, 1, Short.MAX_VALUE)
 		};
 	}
