@@ -34,7 +34,7 @@ public class Plow implements ISpellComponent{
 
 		boolean isDirt = TFC_Core.isDirt(block);
 		boolean isFarmland = TFC_Core.isFarmland(block);
-		if (blockFace == 1 && blockAbove.isAir(world, blockx, blocky + 1, blockz) && (TFC_Core.isGrass(block) || isDirt || isFarmland)){
+		if (blockFace == 1 && blockAbove.isAir(world, blockx, blocky + 1, blockz) || blockAbove == BlockSetup.tallGrass && (TFC_Core.isGrass(block) || isDirt || isFarmland)){
 			Block var10 = block != TFCBlocks.dirt && block != TFCBlocks.grass && block != TFCBlocks.dryGrass ? (block != TFCBlocks.dirt2 && block != TFCBlocks.grass2 && block != TFCBlocks.dryGrass2 ? null : TFCBlocks.dirt2) : TFCBlocks.dirt;
 			if (var10 != null){
 				int meta = world.getBlockMetadata(blockx, blocky, blockz);
