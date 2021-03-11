@@ -12,9 +12,12 @@ import am2.particles.ParticleFloatUpward;
 import am2.particles.ParticleOrbitEntity;
 import am2.playerextensions.ExtendedProperties;
 import am2.spell.SpellUtils;
+import com.dunk.tfc.Core.Player.FoodStatsTFC;
+import com.dunk.tfc.Core.TFC_Core;
 import com.dunk.tfc.ItemSetup;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -23,7 +26,7 @@ import java.util.EnumSet;
 import java.util.Random;
 
 public class Regeneration implements ISpellComponent{
-//TODO Add upgraded regen that slowly mends bones and bleeding. Mending
+
 	@Override
 	public boolean applyEffectBlock(ItemStack stack, World world, int blockx, int blocky, int blockz, int blockFace, double impactX, double impactY, double impactZ, EntityLivingBase caster){
 		return false;
@@ -31,19 +34,43 @@ public class Regeneration implements ISpellComponent{
 
 	@Override
 	public boolean applyEffectEntity(ItemStack stack, World world, EntityLivingBase caster, Entity target){
-		if (target instanceof EntityLivingBase){
+		if (target instanceof EntityPlayer){
+			FoodStatsTFC fs;
+			fs = TFC_Core.getPlayerFoodStats((EntityPlayer)target);
 			if (ExtendedProperties.For((EntityLivingBase)target).getCanHeal()){
 				int duration = SpellUtils.instance.getModifiedInt_Mul(240, stack, caster, target, world, 0, SpellModifiers.DURATION);
 				duration = SpellUtils.instance.modifyDurationBasedOnArmor(caster, duration);
 				if (!world.isRemote)
 					((EntityLivingBase)target).addPotionEffect(new BuffEffectRegeneration(duration, SpellUtils.instance.countModifiers(SpellModifiers.BUFF_POWER, stack, 0)));
 				ExtendedProperties.For((EntityLivingBase)target).setHealCooldown(60);
-				return true;
+				if (fs.pierceWoundTimer > 2400){
+					fs.pierceWoundTimer = 2400;
+					if (fs.pierceWoundSeverity > 0){
+						fs.pierceWoundSeverity = Math.max(fs.pierceWoundSeverity - 1, 0);
+					}
+					TFC_Core.setPlayerFoodStats((EntityPlayer)target, fs);
+				}
+				if (fs.slashWoundTimer > 2400){
+					fs.slashWoundTimer = 2400;
+					if (fs.slashWoundSeverity > 0){
+						fs.slashWoundSeverity = Math.max(fs.slashWoundSeverity - 1, 0);
+					}
+					TFC_Core.setPlayerFoodStats((EntityPlayer)target, fs);
+				}
 			}
+			return true;
+			}else if (target instanceof EntityLivingBase){
+				if (ExtendedProperties.For((EntityLivingBase)target).getCanHeal()){
+					int duration = SpellUtils.instance.getModifiedInt_Mul(240, stack, caster, target, world, 0, SpellModifiers.DURATION);
+					duration = SpellUtils.instance.modifyDurationBasedOnArmor(caster, duration);
+					if (!world.isRemote)
+						((EntityLivingBase)target).addPotionEffect(new BuffEffectRegeneration(duration, SpellUtils.instance.countModifiers(SpellModifiers.BUFF_POWER, stack, 0)));
+					ExtendedProperties.For((EntityLivingBase)target).setHealCooldown(60);
+					return true;
+				}
+			}
+			return false;
 		}
-		return false;
-	}
-
 	@Override
 	public float manaCost(EntityLivingBase caster){
 		return 540;
@@ -90,9 +117,9 @@ public class Regeneration implements ISpellComponent{
 	@Override
 	public Object[] getRecipeItems(){
 		return new Object[]{
-				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_BLUE),
-				ItemSetup.appleJack,
-				ItemSetup.primitiveBandage
+				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_WHITE),
+				ItemSetup.primitiveBandage,
+				ItemSetup.boneNeedle
 		};
 	}
 
