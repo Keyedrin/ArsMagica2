@@ -25,7 +25,6 @@ import java.util.EnumSet;
 import java.util.Random;
 
 public class Heal implements ISpellComponent{
-//TODO Add upgraded heal that instantly mends bones and stops bleeding. Restoration
 	@Override
 	public boolean applyEffectBlock(ItemStack stack, World world, int blockx, int blocky, int blockz, int blockFace, double impactX, double impactY, double impactZ, EntityLivingBase caster){
 		return false;
@@ -112,7 +111,7 @@ public class Heal implements ISpellComponent{
 		return new Object[]{
 				new ItemStack(ItemsCommonProxy.rune, 1, ItemsCommonProxy.rune.META_GREEN),
 				new ItemStack(BlockSetup.flowers,1,4),
-				ItemSetup.sterileBandage
+				ItemSetup.bandage
 		};
 	}
 
